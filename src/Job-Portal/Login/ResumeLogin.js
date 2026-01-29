@@ -79,7 +79,7 @@ useEffect(() => {
             if (result.status == "success") {
               localStorage.setItem("StudLog", JSON.stringify(btoa(token)))
               if(loginpage==="resume")
-              navigate("/resumes", {state:{name:result.name}})
+              navigate("/", {state:{name:result.name}})
               else if (loginpage==="consult")
                 navigate("/consultation-services", {state:{name:result.name}})
               else if (loginpage==="fraud-form")

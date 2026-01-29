@@ -35,6 +35,38 @@ const TemplateGallery = ({ onSelect, logoutresume }) => {
   return (
     <div className="template-gallery">
       <div className="template-grid">
+      <div
+          className="template-card"
+          onClick={() => {
+            // if (logoutresume === true) {
+            //   setResumeAlert(true);
+            // } else {
+              openPreview("six", template6);
+           
+          }}
+          >
+          <h2>Non-Tech Resume</h2>
+          <p>
+            Best suited for non-technical job roles.
+          </p>
+          <img src={template6} alt="Template Six" className="blurred" />
+        </div> 
+        <div
+          className="template-card"
+          onClick={() => {
+            // if (logoutresume === true) {
+            //   setResumeAlert(true);
+            // } else {
+              openPreview("seven", template7);
+           
+          }}
+          >
+          <h2>Non-Tech Resume for Freshers</h2>
+          <p>
+          Perfect for freshers applying to entry-level non-technical positions.
+          </p>
+          <img src={template7} alt="Template Seven" className="blurred" />
+        </div>
         <div
           className="template-card"
           onClick={() => { 
@@ -117,7 +149,7 @@ const TemplateGallery = ({ onSelect, logoutresume }) => {
           <img src={template2} alt="Template Two" className="blurred" />
         </div>
 
-        <div
+        {/* <div
           className="template-card"
           onClick={() => {
             // if (logoutresume === true) {
@@ -132,15 +164,15 @@ const TemplateGallery = ({ onSelect, logoutresume }) => {
             Best suited for non-technical job roles.
           </p>
           <img src={template6} alt="Template Six" className="blurred" />
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           className="template-card"
           onClick={() => {
             // if (logoutresume === true) {
             //   setResumeAlert(true);
             // } else {
-              openPreview("seven", template6);
+              openPreview("seven", template7);
            
           }}
           >
@@ -149,7 +181,7 @@ const TemplateGallery = ({ onSelect, logoutresume }) => {
           Perfect for freshers applying to entry-level non-technical positions.
           </p>
           <img src={template7} alt="Template Seven" className="blurred" />
-        </div>
+        </div> */}
       </div>
       {resumeAlert && (
   logoutresume === true ? (

@@ -1041,7 +1041,7 @@ const [showMobileSearchIcon, setShowMobileSearchIcon]= useState(true)
           <Routes>
           <Route path="/scan/drive/:driveId" element={<ScanDrive  />} />
             <Route path='/fraud-form' element={<PostFraudForm/>}></Route>
-            <Route path="/" element={
+            <Route path="/home" element={
               <Home 
               selectedlocationOption={selectedlocationOption}
               showMobileSearchIcon={showMobileSearchIcon} setShowMobileSearchIcon={setShowMobileSearchIcon}
@@ -1063,7 +1063,8 @@ const [showMobileSearchIcon, setShowMobileSearchIcon]= useState(true)
               gettotalcount={gettotalcount}
               searchIcon={searchIcon}
               />
-            } />
+            } 
+            />
             <Route path="/Walkin-Drives" element={
               <HomeWalkin
               sortedFilteredDriveJobs={sortedFilteredDriveJobs}
@@ -1113,7 +1114,7 @@ const [showMobileSearchIcon, setShowMobileSearchIcon]= useState(true)
               />
             } /> */}
              <Route path="/consultation-services" element={<ConsultationServices />} />
-             <Route path="/resumes" element={<AllResumes />} />
+             <Route path="/" element={<AllResumes />} />
             <Route path="/Blogs" element={<Blogs 
             showMobileSearchIcon={showMobileSearchIcon} setShowMobileSearchIcon={setShowMobileSearchIcon}
             ShowSideNave={ShowSideNave} setShowSideNave={setShowSideNave}

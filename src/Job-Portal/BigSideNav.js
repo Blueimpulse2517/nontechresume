@@ -215,7 +215,13 @@ let StudentAuth = localStorage.getItem("StudLog")
        <>
         <p onClick={()=>{navigate("/AllCareerJobs"); update("AllCareerJobs")}} className={`${Styles.textBigSodeBar} ${value==="AllCareerJobs"?Styles.active:""}`}>ITwalkin Career</p>   
         <p onClick={()=>{navigate("/Walkin-Drives"); update("AllWalkinDrive")}} className={`${Styles.textBigSodeBar} ${value==="AllWalkinDrive"?Styles.active:""} `}>Walkin Drives</p>
-        {StudentAuth? <p onClick={()=>{navigate("/resumes"); update("AllResumes")}} className={`${Styles.textBigSodeBar} ${value==="AllResumes"?Styles.active:""} `}>Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></p>
+        {StudentAuth? <p onClick={() => {
+  navigate("/", {
+    state: { logoutresume: false },
+  });
+  update("AllResumes");
+}}
+ className={`${Styles.textBigSodeBar} ${value==="AllResumes"?Styles.active:""} `}>Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></p>
         :<p onClick={()=>{ navigate("/Job-Seeker-Login", {
           state: { loginpage: "resume" },
         }); update("AllResumes")}} className={`${Styles.textBigSodeBar} ${value==="AllResumes"?Styles.active:""} `}>Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></p>

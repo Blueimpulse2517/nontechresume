@@ -49,7 +49,7 @@ function AllResumes() {
   }
 
   useEffect(() => {
-    if(logoutresume!==true)
+    if((logoutresume!==true && logoutresume !== undefined))
      getProfile();
   }, []);
 

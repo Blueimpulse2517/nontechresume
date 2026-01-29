@@ -125,10 +125,13 @@ function SidebarNav(props) {
 
 let StudentAuth = localStorage.getItem("StudLog")
 const resumeRedirect=()=>{
-  if(StudentAuth)
-    navigate("/resumes")
+  if(StudentAuth){
+    navigate("/", {
+    state: { logoutresume: false },
+})
+  }
 else{
-  navigate("/resumes", {
+  navigate("/", {
     state: { logoutresume: true },
 })
 }
@@ -223,7 +226,7 @@ const [fraudAlert, setfraudAlert]=useState(false)
 
 
 
-        <p onClick={()=>{navigate("/"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
+        <p onClick={()=>{navigate("/home"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
        {EmployeeAuth&&(
         <p onClick={()=>{navigate("/Post-Help-Questions"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Post Help Questions </p>
         
