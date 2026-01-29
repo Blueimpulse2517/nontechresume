@@ -826,15 +826,17 @@ function Nav(props) {
                           </div> 
                       </div>
                       <div>
-                      <NavLink onClick={()=>{navigate("/", {
-                                  state: { logoutresume: true },
-                              })}}  className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>   
+                      <NavLink to="/" state={{ logoutresume: true }} className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>   
                       </div>
-                        {/* <div ref={alertRef} style={{position:"relative"}}> */}
-                        <div onClick={()=>{navigate("/", {
+                      <div>
+                      {/* <NavLink to="/home"  className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>    */}
+                      <NavLink to="/jobs"  className={Styles.logoutHomeJobs} style={navLinkStyles}>Jobs</NavLink>   
+
+                      </div>
+                        {/* <div onClick={()=>{navigate("/", {
                                   state: { logoutresume: true },
                               })}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}>
-                           Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></div>
+                           Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></div> */}
                       {/*   {resumeAlert&&
                          <>
                             <div
@@ -1567,11 +1569,8 @@ className={props.ShowSideNave ? "fas fa-times" : "fas fa-bars"} ref={SimgRef} on
 
                       <div style={{display:"flex", flexDirection:"column"}}>
 
-                      <div ref={alertRef} style={{position:"relative", marginBottom: "-41px", zIndex:"999"}}>
-                        <div onClick={()=>{navigate("/", {
-                                  state: { logoutresume: true },
-                              })}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}> Resume Builder 
-                        <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup>
+                      <div ref={alertRef} style={{position:"relative", marginBottom: "-41px", zIndex:"999",marginLeft:"37px"}}>
+                        <div onClick={()=>{navigate("/jobs")}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}> Jobs
                         </div>
                         {/* {resumeAlert&&
                          <>
