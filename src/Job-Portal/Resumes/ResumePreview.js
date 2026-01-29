@@ -43,7 +43,7 @@ const ResumePreview = () => {
             if (window.history.length > 1) {
               navigate(-1);
             } else {
-              navigate("/resumes");
+              navigate("/");
             }
           }}
         >

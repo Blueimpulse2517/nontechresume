@@ -1,5 +1,27 @@
 
 export const jobTags=[
+  { value: 'NON TECH RESUME', label: 'NON TECH RESUME'},
+
+{ value: 'Tailor', label: 'Tailor'},{ value: 'Driver', label: 'Driver' },
+{ value: 'Security guard', label: 'Security Guard' },
+{ value: 'House keeping', label: 'House Keeping' },
+{ value: 'Pantry boy', label: 'Pantry Boy' },
+{ value: 'Office assistant', label: 'Office Assistant' },
+{ value: 'Helper', label: 'Helper' },
+{ value: 'Packer', label: 'Packer' },
+{ value: 'Checker', label: 'Checker' },
+{ value: 'Ironer', label: 'Ironer' },
+{ value: 'Production executive', label: 'Production Executive' },
+{ value: 'Production supervisor', label: 'Production Supervisor' },
+{ value: 'Finishing supervisor', label: 'Finishing Supervisor' },
+{ value: 'Quality controller', label: 'Quality Controller' },
+{ value: 'Quality executive', label: 'Quality Executive' },
+{ value: 'Auditor', label: 'Auditor' },
+{ value: 'Delivery boy', label: 'Delivery Boy' },
+{ value: 'Warehouse staff', label: 'Warehouse Staff' },
+{ value: 'Field executive', label: 'Field Executive' },
+{ value: 'Peon', label: 'Peon' },
+
     { value: 'TECHNOLOGIES', label: 'TECHNOLOGIES'}, { value: 'Javascript', label: 'Javascript'},
     { value: 'Mern Stack',label:'Mern Stack'},{value:'ReactJs',label:'ReactJs'},{value:'Node js',label:'Node Js'},
     { value: 'Angular js', label: 'Angular js' }, { value: 'Vue js', label: 'Vue js' },

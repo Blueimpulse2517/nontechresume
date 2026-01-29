@@ -109,7 +109,7 @@ const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
 								navigate("/Update-Profile", { state: { name: result.name, profileAlert: true  } })
 							} 
 							else{
-							navigate("/alljobs", { state: { name: result.name } })
+							navigate("/", { state: { name: result.name } })
 							}
 							onClose()
 						}
