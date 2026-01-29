@@ -125,13 +125,10 @@ function SidebarNav(props) {
 
 let StudentAuth = localStorage.getItem("StudLog")
 const resumeRedirect=()=>{
-  if(StudentAuth){
-    navigate("/", {
-    state: { logoutresume: false },
-})
-  }
+  if(StudentAuth)
+    navigate("/resumes")
 else{
-  navigate("/", {
+  navigate("/resumes", {
     state: { logoutresume: true },
 })
 }
@@ -225,8 +222,18 @@ const [fraudAlert, setfraudAlert]=useState(false)
       )} */}
 
 
-
-        <p onClick={()=>{navigate("/home"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
+        {EmployeeAuth&&
+        <p onClick={()=>{navigate("/Search-Candidate"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
+          }
+          {StudentAuth&&
+        <p onClick={()=>{navigate("/",{state: { logoutresume: false }}); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
+          }
+        {!(StudentAuth||EmployeeAuth) &&
+        <>
+        <p onClick={()=>{navigate("/",{state: { logoutresume: true }}); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Home </p>
+        <p onClick={()=>{navigate("/jobs"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Jobs </p>
+       </>
+        }
        {EmployeeAuth&&(
         <p onClick={()=>{navigate("/Post-Help-Questions"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Post Help Questions </p>
         
@@ -274,7 +281,7 @@ const [fraudAlert, setfraudAlert]=useState(false)
         {!EmployeeAuth&&
         <>
         <p onClick={()=>{navigate("/AllCareerJobs"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>ITwalkin Career</p>
-        <p onClick={()=>{resumeRedirect(); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}> Resume Builder</p>
+        {/* <p onClick={()=>{resumeRedirect(); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}> Resume Builder</p> */}
         <p onClick={()=>{navigate("/consultation-services"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Consultation Services</p>
         <p onClick={()=>{navigate("/Walkin-Drives"); props.setShowSideNaveProps(false);props.setShowMobileSearchIcon(true)}} className={`${Styles.textinMobileSodeBar} `}>Walkin Drive</p>
         </>

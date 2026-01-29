@@ -156,17 +156,30 @@ const ResumePreview = () => {
                       Continue to Edit profile
                     </button>
 
-                    <button
+                    {/* <button
                       className={styles.dangerBtn}
                       onClick={() => {
-                        navigate("/resumes", {
+                        navigate("/", {
                           state: { selectedTemplate: templateKey }
                         });
                         setResumeAlert({ show: false, selected: null });
                       }}
                     >
                       Continue to Download Resume
-                    </button>
+                    </button> */}
+                    <button
+  className={styles.dangerBtn}
+  onClick={() => {
+    localStorage.setItem("selectedTemplate", templateKey);
+    navigate("/", {
+      state: { selectedTemplate: templateKey , logoutresume: false}
+    });
+    setResumeAlert({ show: false, selected: null });
+  }}
+>
+  Continue to Download Resume
+</button>
+
                   </div>
                 </>
               )}

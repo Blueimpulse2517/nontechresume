@@ -70,6 +70,7 @@ function AllResumes() {
   </button> */}
     <div>
       {console.log("st",selectedTemplate)}
+      {console.log("lr",logoutresume)}
       {!selectedTemplate?
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Choose resume template<br></br> </h1>
        :
@@ -106,7 +107,7 @@ function AllResumes() {
   <div class={Style.updatebtn}>Update Profile</div>
 </button>
  
-</div>
+</div>{console.log("selected templates")}
 
           {selectedTemplate === 'one' && <TemplateOne data={profileData} />}
           {selectedTemplate === 'two' && <TemplateTwo data={profileData} />}

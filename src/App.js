@@ -1041,7 +1041,7 @@ const [showMobileSearchIcon, setShowMobileSearchIcon]= useState(true)
           <Routes>
           <Route path="/scan/drive/:driveId" element={<ScanDrive  />} />
             <Route path='/fraud-form' element={<PostFraudForm/>}></Route>
-            <Route path="/home" element={
+            <Route path="/jobs" element={
               <Home 
               selectedlocationOption={selectedlocationOption}
               showMobileSearchIcon={showMobileSearchIcon} setShowMobileSearchIcon={setShowMobileSearchIcon}
