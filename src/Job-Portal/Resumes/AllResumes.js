@@ -49,7 +49,7 @@ function AllResumes() {
   }
 
   useEffect(() => {
-    if((logoutresume!==true && logoutresume !== undefined))
+    if(logoutresume!==true)
      getProfile();
   }, []);
 
@@ -70,7 +70,6 @@ function AllResumes() {
   </button> */}
     <div>
       {console.log("st",selectedTemplate)}
-      {console.log("lr",logoutresume)}
       {!selectedTemplate?
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Choose resume template<br></br> </h1>
        :
@@ -107,7 +106,7 @@ function AllResumes() {
   <div class={Style.updatebtn}>Update Profile</div>
 </button>
  
-</div>{console.log("selected templates")}
+</div>
 
           {selectedTemplate === 'one' && <TemplateOne data={profileData} />}
           {selectedTemplate === 'two' && <TemplateTwo data={profileData} />}
