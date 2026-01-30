@@ -43,7 +43,7 @@ const ResumePreview = () => {
             if (window.history.length > 1) {
               navigate(-1);
             } else {
-              navigate("/");
+              navigate("/resumes");
             }
           }}
         >
@@ -156,30 +156,17 @@ const ResumePreview = () => {
                       Continue to Edit profile
                     </button>
 
-                    {/* <button
+                    <button
                       className={styles.dangerBtn}
                       onClick={() => {
-                        navigate("/", {
+                        navigate("/resumes", {
                           state: { selectedTemplate: templateKey }
                         });
                         setResumeAlert({ show: false, selected: null });
                       }}
                     >
                       Continue to Download Resume
-                    </button> */}
-                    <button
-  className={styles.dangerBtn}
-  onClick={() => {
-    localStorage.setItem("selectedTemplate", templateKey);
-    navigate("/", {
-      state: { selectedTemplate: templateKey , logoutresume: false}
-    });
-    setResumeAlert({ show: false, selected: null });
-  }}
->
-  Continue to Download Resume
-</button>
-
+                    </button>
                   </div>
                 </>
               )}

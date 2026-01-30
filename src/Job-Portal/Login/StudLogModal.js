@@ -19,7 +19,7 @@ import { signInWithPopup, OAuthProvider, getAuth } from "firebase/auth";
 import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../Config";
 
-const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
+const Modal = ({ isregCheck,isStuOpen, onClose,cslogin, csreg, children, msalInstance }) => {
 	const { instance } = useMsal();
 
 
@@ -101,12 +101,20 @@ const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
 							// alert("Account already exists. Please log in")
 							setRegAlert(true)
 						  }
+						else  if(csreg==true && result.action == "login"){
+							// alert("Account already exists. Please log in")
+							setRegAlert(true)
+						  }
 						
 						else if (result.status == "success") {
 							localStorage.setItem("StudLog", JSON.stringify(btoa(token)))
 							localStorage.setItem("StudId", JSON.stringify(Id))
                             if(isregCheck==true) {
 								navigate("/Update-Profile", { state: { name: result.name, profileAlert: true  } })
+							} 
+							else if (cslogin==true)
+							{
+								navigate("/resumes", { state: { name: result.name, profileAlert: true, logoutresume:false  } })
 							} 
 							else{
 							navigate("/", { state: { name: result.name } })
@@ -343,7 +351,11 @@ const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
           <div style={{ marginTop: '15px', display: "flex", justifyContent: "center", gap: "5px" }}>
             <button
              onClick={() => { 
-              navigate("/JobSeekerLogin"); 
+              if (csreg === true) {
+    navigate("/JobSeekerLogin", {state: { loginpage: "cs" }})
+  } else {
+    navigate("/JobSeekerLogin");
+  }
 			  setRegAlert(false);
 			  onClose();
 			}
@@ -360,7 +372,7 @@ const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
                
               }}
             >
-             Login as Jobseeker
+             {csreg?"Login as CS Center":"Login as Jobseeker"}
             </button>
             <button
               onClick={() => { 
@@ -399,9 +411,17 @@ const Modal = ({ isregCheck,isStuOpen, onClose, children, msalInstance }) => {
 				<>
 
 					<div className={styles.BothsignUpWrapperModel}>
-						{isregCheck==true?
-												<p className={styles.Loginpage}>New Job Seeker Registration</p>:
-						<p className={styles.Loginpage}>Job Seeker Login</p>}
+						{isregCheck === true ? (
+  <p className={styles.Loginpage}>New Job Seeker Registration</p>
+) : cslogin === true ? (
+  <p className={styles.Loginpage} style={{marginLeft:"30%"}}>CS Center Login</p>
+) 
+: csreg === true ? (
+  <p className={styles.Loginpage} style={{marginLeft:"20%"}}>CS Center Registration</p>
+): (
+  <p className={styles.Loginpage}>Job Seeker Login</p>
+)}
+
 
 						{/* <input maxLength="10" className={styles.inputs} type="number" placeholder='enter phone Number'
             value={PhoneNumber} autoComplete="on" onChange={(e) => { setPhoneNumber(e.target.value) }} />

@@ -61,6 +61,8 @@ function Nav(props) {
   let Reg = useRef();
  
   const[isregCheck, setisregCheck]=useState(false);
+  const[cslogin, setcslogin]=useState(false);
+  const[csreg, setcsreg]=useState(false);
   const[isEmpregCheck, setisEmpregCheck]=useState(false);
   // window.addEventListener("click", (e) => {
   //   if (e.target !== newReg.current && e.target !== Reg.current) {
@@ -357,11 +359,10 @@ function Nav(props) {
                  </div>
                 <div className={Styles.ITwalkinWrapper}>
                    <img className={Styles.IwalkinLogologo} src={Itwalkinlogo} />
-
                 </div>
                   <div><NavLink to="/alljobs" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>All Jobs </NavLink>
                   </div>
-                  <div><NavLink to="/" state={{ logoutresume: false }} className={Styles.AllJobJobSeeker}  style={navLinkStyles}>
+                  <div><NavLink to="/resumes" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>
                    Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup> </NavLink></div>
                    <div><NavLink to="/consultation-services" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>Consultation Services </NavLink>
                   </div>
@@ -826,17 +827,13 @@ function Nav(props) {
                           </div> 
                       </div>
                       <div>
-                      <NavLink to="/" state={{ logoutresume: true }} className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>   
+                      <NavLink to="/" className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>   
                       </div>
-                      <div>
-                      {/* <NavLink to="/home"  className={Styles.HomeJobs} style={navLinkStyles}><i style={{ marginLeft: 0, marginRight: "5px" }} class="fa-solid fa-house"></i>Home</NavLink>    */}
-                      <NavLink to="/jobs"  className={Styles.logoutHomeJobs} style={navLinkStyles}>Jobs</NavLink>   
-
-                      </div>
-                        {/* <div onClick={()=>{navigate("/", {
+                        {/* <div ref={alertRef} style={{position:"relative"}}> */}
+                        <div onClick={()=>{navigate("/resumes", {
                                   state: { logoutresume: true },
                               })}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}>
-                           Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></div> */}
+                           Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></div>
                       {/*   {resumeAlert&&
                          <>
                             <div
@@ -1190,6 +1187,7 @@ function Nav(props) {
                       <div style={{right:"17%", width:"100px"}} className={Styles.dropdownwrapperHomeRegistration} ref={regmenuRef} >
                         <p onClick={() => { handleEmpOpen(); handleStuClose(); setisEmpregCheck(true) }}>Employer Registration</p>
                         <p onClick={() => { handleStuOpen(); handleClose(); setisregCheck(true) }}>Job Seeker Registration</p>
+                        <p onClick={() => { handleStuOpen(); handleClose(); setcsreg(true); setcslogin(false)  }}> CS Center Registration</p>
                       </div>
 
                     : ""}
@@ -1202,7 +1200,7 @@ function Nav(props) {
                       <div style={{  }} className={Styles.dropdownwrapperHome} ref={menuRef} >
                         <p onClick={() => { handleEmpOpen(); handleStuClose();setisEmpregCheck(false) }}>Employer Login</p>
                         <p onClick={() => { handleStuOpen(); handleClose();setisregCheck(false) }}>Job Seeker Login</p>
-                         <p>CS Center</p>
+                        <p onClick={() => { handleStuOpen(); handleClose();setcslogin(true); setcsreg(false) }}>CS Center</p>
                       </div>
                     </div>
 
@@ -1308,7 +1306,7 @@ function Nav(props) {
                   
                   <>
                   <div ref={loginModalRef}>
-                    <StuModal isregCheck={isregCheck}  isStuOpen={Stuopen} onClose={() => { handleStuClose() }} />
+                    <StuModal isregCheck={isregCheck} cslogin={cslogin} csreg={csreg} isStuOpen={Stuopen} onClose={() => { handleStuClose() }} />
                     <Modal isEmpregCheck={isEmpregCheck} isOpen={open} onClose={() => { handleClose() }} />
                     </div>
                   </>
@@ -1355,11 +1353,11 @@ function Nav(props) {
                 </div>
                  
                 <div className={Styles.fullnavewrapperRSMobile} style={{marginRight:"11px"}}>
-                <div className={Styles.resumeMenuVisible}><NavLink to="/"  state={{ logoutresume: false }}className={Styles.AllJobJobSeeker}  ><sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup> <br></br>Resume<br></br> Builder </NavLink></div>
+                <div className={Styles.resumeMenuVisible}><NavLink to="/resumes" className={Styles.AllJobJobSeeker}  ><sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup> <br></br>Resume<br></br> Builder </NavLink></div>
 
                  <div style={{display:"flex", flexDirection:"column"}}>
                   <div className={Styles.allJobMobspl}> <NavLink to="/alljobs" className={`${Styles.Moblink} ${Styles.AlllJobs}`} >All Jobs </NavLink> </div>
-                  <div className={Styles.resumeMenuVisibleMob}><NavLink to="/"  state={{ logoutresume: false }}className={Styles.AllJobJobSeeker}  > Resume Builder
+                  <div className={Styles.resumeMenuVisibleMob}><NavLink to="/resumes" className={Styles.AllJobJobSeeker}  > Resume Builder
                   <sup style={{border:"2px solid white",borderRadius:"25px",padding:"2px"}}>Beta</sup> </NavLink></div>
                   </div>
                 <div>
@@ -1569,8 +1567,11 @@ className={props.ShowSideNave ? "fas fa-times" : "fas fa-bars"} ref={SimgRef} on
 
                       <div style={{display:"flex", flexDirection:"column"}}>
 
-                      <div ref={alertRef} style={{position:"relative", marginBottom: "-41px", zIndex:"999",marginLeft:"37px"}}>
-                        <div onClick={()=>{navigate("/jobs")}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}> Jobs
+                      <div ref={alertRef} style={{position:"relative", marginBottom: "-41px", zIndex:"999"}}>
+                        <div onClick={()=>{navigate("/resumes", {
+                                  state: { logoutresume: true },
+                              })}} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}> Resume Builder 
+                        <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup>
                         </div>
                         {/* {resumeAlert&&
                          <>
@@ -1718,7 +1719,7 @@ onClick={() => {
                            <div className={Styles.MobHomeDropdownwrapper} ref={menuRef} >
                              <p onClick={() => { navigate("/EmployeeLogin") }}>Employer Login </p>
                              <p onClick={() => { navigate("/JobSeekerLogin") }}>Job Seeker Login</p>
-                              <p>CS Center</p>
+                             <p onClick={()=>{navigate("/JobSeekerLogin", {state: { loginpage: "cs" }})}} >CS Center</p>
                            </div>
                            : ""}
                        </div>           
