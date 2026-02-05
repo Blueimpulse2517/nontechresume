@@ -114,7 +114,7 @@ const Modal = ({ isregCheck,isStuOpen, onClose,cslogin, csreg, children, msalIns
 							} 
 							else if (cslogin==true)
 							{
-								navigate("/resumes", { state: { name: result.name, profileAlert: true, logoutresume:false  } })
+								navigate("/resumes", { state: { name: result.name, profileAlert: true, logoutresume:false, loginprofile:"cs_center"  } })
 							} 
 							else{
 							navigate("/", { state: { name: result.name } })

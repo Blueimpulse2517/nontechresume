@@ -4,6 +4,7 @@ import styles from "./ResumeForm.module.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useScreenSize from '../SizeHook';
 import { SKILL_LIBRARY } from "./SkillLibrary";
+import TemplateFive from './TemplateFive';
 
 const ResumeForm = () => {
 
@@ -748,8 +749,9 @@ useEffect(()=>{
 };
 
  let location = useLocation()
-   const { formstate } = location.state || {};
-  //  console.log("fd",formstate)
+   const { formstate, loginprofile, selectedTemplate } = location.state || {};
+    // const { loginprofile } = location.state || {};
+   console.log("fd",selectedTemplate)
 
 
   // ------------------- xml codes -------------------------------
@@ -1155,6 +1157,14 @@ const escapeXml = (value) => {
   >
     Export XML
   </button>
+
+   <button
+    style={{fontSize: "12px",fontWeight:700}}
+    className={styles.tvbackbtn}
+    onClick={()=>{ navigate("/resumes", {state: { selectedTemplate: selectedTemplate }  })}}
+  >
+    Preview
+  </button>
   </div>
 
       <div style={{display:"flex",justifyContent:"center"}}>
@@ -1179,6 +1189,8 @@ const escapeXml = (value) => {
   <p>Loading...</p>
 )}
 
+
+{ !(loginprofile==="cs_center")&&
 <div style={{ padding: "10px", fontFamily: "Arial" }}>
       <p style={{ fontWeight: "bold" }}>
       Your google profile picture will be used on your resume. Make sure you have latest profile picture updated in Google account. Please confirm, Do you want to Add  your google profile picture in resume
@@ -1207,7 +1219,7 @@ const escapeXml = (value) => {
       </label>
 
       </div>
-              
+      }        
             </div>
 
         <input style={inputStyle}  placeholder="Name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} />

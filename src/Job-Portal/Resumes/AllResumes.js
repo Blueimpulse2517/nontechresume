@@ -21,6 +21,9 @@ function AllResumes() {
   let location = useLocation()
   const { logoutresume } = location.state || {};
   const { selectedTemplate } = location.state || {};
+  const { loginprofile } = location.state || {};
+
+  // console.log("login profile", loginprofile)
 
   async function getProfile() {
     const headers = {
@@ -69,13 +72,13 @@ function AllResumes() {
     <div style={{ fontSize: "12px", fontWeight: "800" }}>Back</div>
   </button> */}
     <div>
-      {console.log("st",selectedTemplate)}
+      {/* {console.log("st",selectedTemplate)} */}
       {!selectedTemplate?
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Choose resume template<br></br> </h1>
        :
        <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Preview Your Resume </h1>}
       {!selectedTemplate && (
-        <TemplateGallery logoutresume={logoutresume}/>
+        <TemplateGallery logoutresume={logoutresume} loginprofile={loginprofile}/>
       )}
 
       {selectedTemplate && profileData && (
@@ -107,7 +110,7 @@ function AllResumes() {
 </button>
  
 </div>
-
+{/* {console.log("selected template",selectedTemplate)} */}
           {selectedTemplate === 'one' && <TemplateOne data={profileData} />}
           {selectedTemplate === 'two' && <TemplateTwo data={profileData} />}
           {selectedTemplate === 'three' && <TemplateThree data={profileData} />}

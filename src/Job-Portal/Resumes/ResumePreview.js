@@ -31,7 +31,7 @@ const ResumePreview = () => {
 
   if (!state) return null;
 
-  const { img, templateKey } = state;
+  const { img, templateKey, loginprofile } = state;
 
   return (
     <>
@@ -112,42 +112,42 @@ const ResumePreview = () => {
                       onClick={() => {
                         if (resumeAlert.selected === "one") {
                           navigate("/resume-form", {
-                            state: { formstate: "experience" }
+                            state: { formstate: "experience", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else if (resumeAlert.selected === "two") {
                           navigate("/resume-form", {
-                            state: { formstate: "entrylevelambition" }
+                            state: { formstate: "entrylevelambition", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else if (resumeAlert.selected === "three") {
                           navigate("/resume-form", {
-                            state: { formstate: "entrylevelpro" }
+                            state: { formstate: "entrylevelpro", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else if (resumeAlert.selected === "five") {
                           navigate("/resume-form", {
-                            state: { formstate: "testing" }
+                            state: { formstate: "testing", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                        else if (resumeAlert.selected === "six") {
                           navigate("/resume-form", {
-                            state: { formstate: "nontech" }
+                            state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else if (resumeAlert.selected === "seven") {
                           navigate("/resume-form", {
-                            state: { formstate: "nontech" }
+                            state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else if (resumeAlert.selected === "four") {
                           navigate("/resume-form", {
-                            state: { formstate: "fullstack" }
+                            state: { formstate: "fullstack", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         else {
                           navigate("/resume-form", {
-                            state: { formstate: "freshers" }
+                            state: { formstate: "freshers", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
                         setResumeAlert({ show: false, selected: null });
