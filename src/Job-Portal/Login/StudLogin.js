@@ -104,7 +104,7 @@ useEffect(() => {
                 navigate("/Update-Profile", {state:{name:result.name, profileAlert: true }})
               }
               if(loginpage==="cs" ){
-                navigate("/resumes", {state:{name:result.name, profileAlert: true, logoutresume:false }})
+                navigate("/resumes", {state:{name:result.name, profileAlert: true, logoutresume:false, loginprofile:"cs_center" }})
               }
               else{
               navigate("/", {state:{name:result.name}})

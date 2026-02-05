@@ -10,7 +10,7 @@ import template7 from "../img/template7.jpg";
 
 import { useNavigate } from "react-router-dom";
 
-const TemplateGallery = ({ onSelect, logoutresume }) => {
+const TemplateGallery = ({ onSelect, logoutresume, loginprofile }) => {
   const [resumeAlert, setResumeAlert] = useState(false);
   const alertRef = useRef(null);
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const TemplateGallery = ({ onSelect, logoutresume }) => {
 
   const openPreview = (templateKey, img) => {
     navigate("/resume-preview", {
-      state: { templateKey, img },
+      state: { templateKey, img, loginprofile },
     });
   };
 
