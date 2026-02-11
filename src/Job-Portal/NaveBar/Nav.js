@@ -60,6 +60,8 @@ function Nav(props) {
   let newReg = useRef();
   let Reg = useRef();
  
+  const csprofile = JSON.parse(localStorage.getItem("csprofile") || "null");
+
   const[isregCheck, setisregCheck]=useState(false);
   const[cslogin, setcslogin]=useState(false);
   const[csreg, setcsreg]=useState(false);
@@ -121,7 +123,9 @@ function Nav(props) {
   function mypostedjob() {
     navigate("/postedjobs")
   }
-
+function mycreatedresume() {
+    navigate("/myCreatedResume")
+  }
   function myposteddrive() {
     navigate("/posteddrives")
   }
@@ -510,6 +514,10 @@ function Nav(props) {
 
     <p className={Styles.text} ref={menuRef} onClick={MyJobApplied}>Jobs Applied</p>
     <p className={Styles.text} ref={menuRef} onClick={MyDrivesApplied}>Registered <br></br>Walkin Drives</p>
+    
+    {csprofile==="cs_center"&&
+        <p className={Styles.text} ref={menuRef} onClick={mycreatedresume} >My Created <br></br>Resume</p>
+    }
     <p className={Styles.text} ref={menuRef} onClick={AskQuestion}>Ask Question</p>
     <p className={Styles.text} ref={menuRef} onClick={StudlogOut}>Logout</p>
 
@@ -1341,6 +1349,9 @@ function Nav(props) {
                     <p className={Styles.text} ref={menuRef} onClick={myprofile}>My profile</p>
                     <p className={Styles.text} ref={menuRef} onClick={MyJobApplied}>Jobs Applied</p>
                     <p className={Styles.text} ref={menuRef} onClick={MyDrivesApplied}>Registered <br></br>Walkin Drives</p>
+                    {csprofile==="cs_center"&&
+        <p className={Styles.text} ref={menuRef} onClick={mycreatedresume} >My Created <br></br>Resume</p>
+    }
                     <p className={Styles.text} ref={menuRef} onClick={AskQuestion}>Ask Question</p>
 
                     <p className={Styles.text} ref={menuRef} onClick={StudlogOut}>Logout</p>

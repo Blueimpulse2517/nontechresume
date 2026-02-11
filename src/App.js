@@ -91,6 +91,7 @@ import MyAppliedDrives from "./Job-Portal/Jobs/MyAppliedDrives";
 import HomeWalkin from "./Job-Portal/Jobs/AllHomeWalkins";
 import ConsultationServices from "./Job-Portal/Consultation Services/ConsultationServices";
 import ResumePreview from "./Job-Portal/Resumes/ResumePreview";
+import MyCreatedResume from "./Job-Portal/Resumes/MyCreatedResume";
 // import ConsultationServices from "./Job-Portal/Consultation Services/ConsultationServices";
 
 
@@ -1207,6 +1208,31 @@ const [showMobileSearchIcon, setShowMobileSearchIcon]= useState(true)
             <Route element={<StudPrivate />}>
             
             <Route path="/scanner" element={<QRScanner />} />
+            <Route path="/myCreatedResume" element={<MyCreatedResume url={axios.defaults.baseURL}
+            showMobileSearchIcon={showMobileSearchIcon} setShowMobileSearchIcon={setShowMobileSearchIcon}
+               ShowSideNave={ShowSideNave} setShowSideNave={setShowSideNave}
+               searchClick={searchClick} setSearchClick={setSearchClick}
+              nopageFilter={nopageFilter} setNoPageFilter={setNoPageFilter} 
+              searchKey={searchKey} setsearchKey={setsearchKey}
+              Filtereredjobs={Filtereredjobs} setFiltereredjobs={setFiltereredjobs}
+              Result={Result} setResult={setResult}
+              Filterjobs={Filterjobs} setFilterjobs={setFilterjobs}
+              jobs={jobs} setJobs={setJobs}
+              count={count} setCount={setCount}
+              Active={Active} setActive={setActive}
+              jobTagsIds={jobTagsIds} setJobTagsIds={setJobTagsIds}
+              PageLoader={PageLoader} setPageLoader={setPageLoader}
+              totalCount={totalCount} settotalCount={settotalCount}
+              searchs={searchs}
+              getjobs={getjobs}
+              gettotalcount={gettotalcount}
+              searchIcon={searchIcon}
+              FilCandidate={FilCandidate}
+              setFilCandidate={setFilCandidate}
+              getAllJobSeekers={getAllJobSeekers}
+              Candidate={Candidate}
+              setCandidate={setCandidate}
+            />} />
             <Route path="/enter-cabin" element={<JobseekerEnterCabin />} />
              <Route path="resume-form" element={<ResumeForm />}></Route>
               <Route path="/alljobs" element={<Jobs url={axios.defaults.baseURL} 

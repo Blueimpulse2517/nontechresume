@@ -23,6 +23,10 @@ function AllResumes() {
   const { selectedTemplate } = location.state || {};
   const { loginprofile } = location.state || {};
 
+  if(loginprofile==="cs_center"){
+    localStorage.setItem("csprofile", JSON.stringify(loginprofile));
+  }
+
   // console.log("login profile", loginprofile)
 
   async function getProfile() {
