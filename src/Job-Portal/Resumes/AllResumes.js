@@ -87,7 +87,7 @@ function AllResumes() {
 
       {selectedTemplate && profileData && (
         <div style={{ padding: '20px' }}>
-          <div style={{display:"flex"}}>
+          <div style={{display:"flex",marginBottom:"5px"}}>
           <button
   class={Style.jobdetailBackBtnContainer }
   onClick={() => {

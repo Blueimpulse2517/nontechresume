@@ -1,3 +1,22 @@
+.personalGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 132px 20px 1fr;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.colon {
+  text-align: center;
+}
 /* WRAPPER */
 .wrapper {
     width: 100%;
@@ -8,10 +27,10 @@
   
   /* RESUME PAGE */
   .resume {
-    width: 239mm;
-    height: 297mm;
+    width: 205mm;
+    height: 303mm;
     background: #ffffff;
-    padding: 40px;
+    padding: 15px;
     border: 1px solid #000;
     /* font-family: "Times New Roman", serif; */
     font-size: 12px;
@@ -25,15 +44,13 @@
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-top:-21px;
+    margin-top:-13px;
   }
   
   .place{
     margin-top:-17px;
   }
-  .date{
-
-  }
+  
   /* HEADER */
   .header {
     display: flex;
