@@ -43,7 +43,7 @@ const TemplateSix = () => {
         <div className={styles.header}>
           <div>
             <strong>{profileData.name}</strong>
-            <div style={{width:"50%"}}>
+            <div style={{width:"35%"}}>
             <p>{profileData.address}</p>
             </div>
           </div>
@@ -120,23 +120,62 @@ const TemplateSix = () => {
         </Section>
 
         {/* PERSONAL DETAILS */}
-        <Section title="Personal Details">
-          <div className={styles.personalGrid}>
-            <p><strong>Name:</strong> {profileData.name}</p>
-            <p><strong>Father Name:</strong> {profileData.personalDetails?.[0]?.fatherName || "N/A"}</p>
-            <p><strong>Mother Name:</strong> {profileData.personalDetails?.[0]?.motherName || "N/A"}</p>
-            <p><strong>Date of Birth:</strong> {profileData?.personalDetails[0]?.dob
-    ? new Date(profileData.personalDetails[0].dob).toLocaleDateString("en-US", {
-        day: "2-digit",
-        month: "short", 
-        year: "numeric",
-      })
-    : "N/A"}</p>
-            <p><strong>Gender:</strong> {profileData.personalDetails?.[0]?.gender || "N/A"}</p>
-            <p><strong>Nationality:</strong> {profileData.personalDetails?.[0]?.Nationality || "N/A"}</p>
-            <p><strong>Languages Known:</strong> {profileData.languages?.join(", ")}</p>
-          </div>
-        </Section>
+       <Section title="Personal Details">
+  <div className={styles.personalGrid}>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Name</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.name}</span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Father Name</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.personalDetails?.[0]?.fatherName || "N/A"}</span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Mother Name</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.personalDetails?.[0]?.motherName || "N/A"}</span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Date of Birth</span>
+      <span className={styles.colon}>:</span>
+      <span>
+        {profileData?.personalDetails?.[0]?.dob
+          ? new Date(profileData.personalDetails[0].dob).toLocaleDateString("en-US", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })
+          : "N/A"}
+      </span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Gender</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.personalDetails?.[0]?.gender || "N/A"}</span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Nationality</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.personalDetails?.[0]?.Nationality || "N/A"}</span>
+    </div>
+
+    <div className={styles.row}>
+      <span className={styles.label}>Languages Known</span>
+      <span className={styles.colon}>:</span>
+      <span>{profileData.languages?.join(", ") || "N/A"}</span>
+    </div>
+
+  </div>
+</Section>
+
 
         {/* DECLARATION */}
         <Section title="Declaration">
