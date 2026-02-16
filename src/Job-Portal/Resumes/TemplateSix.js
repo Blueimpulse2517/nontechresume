@@ -37,18 +37,20 @@ const TemplateSix = () => {
   return (
     <div className={styles.wrapper}>
       <div id="template-six" className={styles.resume}>
+        <div className={styles.innerBorder}>
+
         {/* HEADER */}
         <h1 className={styles.title}>RESUME</h1>
 
         <div className={styles.header}>
           <div>
             <strong>{profileData.name}</strong>
-            <div style={{width:"35%"}}>
-            <p>{profileData.address}</p>
+            <div style={{ width: "50%" , marginBottom:"-27px"}}>
+              <p>{profileData.address}</p>
             </div>
           </div>
 
-          <div className={styles.headerRight}>
+          <div  style={{width:"55%"}} className={styles.headerRight}>
             <p><strong>E-mail:</strong> {profileData.email}</p>
             <p><strong>Contact No:</strong> {profileData.phoneNumber}</p>
           </div>
@@ -56,7 +58,11 @@ const TemplateSix = () => {
 
         {/* OBJECTIVE */}
         <Section title="Objective">
-          <p>{profileData.objective?profileData.objective:"I wan to excel in the field with hard work, perseverance and dedication."}</p>
+          <p>
+            {profileData.objective
+              ? profileData.objective
+              : "I wan to excel in the field with hard work, perseverance and dedication."}
+          </p>
         </Section>
 
         {/* EDUCATION */}
@@ -85,19 +91,18 @@ const TemplateSix = () => {
 
         {/* TECHNICAL SKILLS */}
         <Section title="Technical Skills">
-  {["Computer", "Typing"].map((heading) => {
-    const group = profileData.skills?.find(
-      (g) => g.heading === heading
-    );
+          {["Computer", "Typing"].map((heading) => {
+            const group = profileData.skills?.find(
+              (g) => g.heading === heading
+            );
 
-    return group && group.items?.length > 0 ? (
-      <p key={heading}>
-        <strong>{heading}:</strong> {group.items.join(", ")}
-      </p>
-    ) : null;
-  })}
-</Section>
-
+            return group && group.items?.length > 0 ? (
+              <p key={heading}>
+                <strong>{heading}:</strong> {group.items.join(", ")}
+              </p>
+            ) : null;
+          })}
+        </Section>
 
         {/* HOBBIES */}
         <Section title="Hobbies">
@@ -120,62 +125,60 @@ const TemplateSix = () => {
         </Section>
 
         {/* PERSONAL DETAILS */}
-       <Section title="Personal Details">
-  <div className={styles.personalGrid}>
+        <Section title="Personal Details">
+          <div className={styles.personalGrid}>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Name</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.name}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Name</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.name}</span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Father Name</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.personalDetails?.[0]?.fatherName || "N/A"}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Father Name</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.personalDetails?.[0]?.fatherName || "N/A"}</span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Mother Name</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.personalDetails?.[0]?.motherName || "N/A"}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Mother Name</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.personalDetails?.[0]?.motherName || "N/A"}</span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Date of Birth</span>
-      <span className={styles.colon}>:</span>
-      <span>
-        {profileData?.personalDetails?.[0]?.dob
-          ? new Date(profileData.personalDetails[0].dob).toLocaleDateString("en-US", {
-              day: "2-digit",
-              month: "short",
-              year: "numeric",
-            })
-          : "N/A"}
-      </span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Date of Birth</span>
+              <span className={styles.colon}>:</span>
+              <span>
+                {profileData?.personalDetails?.[0]?.dob
+                  ? new Date(profileData.personalDetails[0].dob).toLocaleDateString(
+                      "en-US",
+                      { day: "2-digit", month: "short", year: "numeric" }
+                    )
+                  : "N/A"}
+              </span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Gender</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.personalDetails?.[0]?.gender || "N/A"}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Gender</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.personalDetails?.[0]?.gender || "N/A"}</span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Nationality</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.personalDetails?.[0]?.Nationality || "N/A"}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Nationality</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.personalDetails?.[0]?.Nationality || "N/A"}</span>
+            </div>
 
-    <div className={styles.row}>
-      <span className={styles.label}>Languages Known</span>
-      <span className={styles.colon}>:</span>
-      <span>{profileData.languages?.join(", ") || "N/A"}</span>
-    </div>
+            <div className={styles.row}>
+              <span className={styles.label}>Languages Known</span>
+              <span className={styles.colon}>:</span>
+              <span>{profileData.languages?.join(", ") || "N/A"}</span>
+            </div>
 
-  </div>
-</Section>
-
+          </div>
+        </Section>
 
         {/* DECLARATION */}
         <Section title="Declaration">
@@ -187,6 +190,8 @@ const TemplateSix = () => {
           <p className={styles.place}><strong>Place:</strong></p>
           <p className={styles.date}><strong>Date:</strong> __________</p>
         </Section>
+
+        </div>
       </div>
 
       <button onClick={handleDownloadPDF} className={styles.downloadBtn}>
@@ -204,5 +209,3 @@ const Section = ({ title, children }) => (
 );
 
 export default TemplateSix;
-
-
