@@ -17,159 +17,180 @@
 .colon {
   text-align: center;
 }
+
 /* WRAPPER */
 .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* RESUME PAGE */
-  .resume {
-    width: 205mm;
-    height: 303mm;
-    background: #ffffff;
-    padding: 15px;
-    border: 1px solid #000;
-    /* font-family: "Times New Roman", serif; */
-    font-size: 12px;
-    box-sizing: border-box;
-    overflow-y:hidden ;
-  }
-  
-  /* TITLE */
-  .title {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-top:-13px;
-  }
-  
-  .place{
-    margin-top:-17px;
-  }
-  
-  /* HEADER */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .headerRight {
-    text-align: right;
-  }
-  
-  /* SECTION TITLE (GREY BAR) */
-  .sectionTitle {
-    background-color: #e6e6e6;
-    padding: 6px 10px;
-    font-weight: bold;
-    margin-top: 16px;
-  }
-  
-  /* SECTION CONTENT */
-  .sectionContent {
-    padding: 10px;
-  }
-  
-  /* TABLE (EDUCATION) */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 5px;
-    margin-left: 1px;
-  }
-  
-  .table th,
-  .table td {
-    border: 1px solid #000;
-    padding: 6px;
-    font-size: 13px;
-    text-align: center;
-  }
-  
-  /* LISTS */
-  ul {
-    padding-left: 20px;
-    margin: 6px 0;
-  }
-  
-  li {
-    margin-bottom: 4px;
-  }
-  
-  /* PERSONAL DETAILS */
-  .personalGrid p {
-    margin: 4px 0;
-  }
-  
-  /* DECLARATION */
-  .thankYou {
-    text-align: right;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
-  /* DOWNLOAD BUTTON */
-  .downloadBtn {
-    margin: 20px;
-    padding: 10px 18px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .downloadBtn:hover {
-    opacity: 0.85;
-  }
-  
-  .table tbody tr {
-    background-color: #ffffff;
-  }
-  
-  /* ---------------- MOBILE VIEW (SCALE ONLY, NO UI CHANGE) ---------------- */
-  
-  /* Always desktop view */
-  @media (max-width: 768px) {
-    .wrapper {
-      transform-origin: top center;
-      transform: scale(0.78);
-    }
-  }
-  
-  @media (max-width: 475px) {
-    .wrapper {
-      transform-origin: top center;
-      transform: scale(0.42);
-    }
-  }
-  
-  @media (max-width: 376px) {
-    .wrapper {
-      transform-origin: top center;
-      transform: scale(0.375);
-    }
-  }
-  
-  @media (max-width: 320px) {
-    .wrapper {
-      transform-origin: top center;
-      transform: scale(0.325);
-    }
-  }
-  
-  /* ---------------- PDF FIX ---------------- */
-  
-  .forceA4 {
-    width: 210mm !important;
-    min-height: 297mm !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* RESUME PAGE */
+/* .resume {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 15mm; 
+  border: none;
+  font-size: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+} */
+
+.resume {
+  width: 210mm;
+  height: 297mm;
+  background: #ffffff;
+  padding: 8mm;
+  border: none;
+  font-size: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* INNER BORDER */
+/* .innerBorder {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  padding: 15px;
+  box-sizing: border-box;
+} */
+
+.innerBorder {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden; /* keeps border always visible */
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: -13px;
+}
+
+.place {
+  margin-top: -17px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.headerRight {
+  text-align: right;
+}
+
+/* SECTION TITLE */
+.sectionTitle {
+  background-color: #b8b8b8;
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size:14px;
+}
+
+/* SECTION CONTENT */
+.sectionContent {
+  padding: 7px;
+  font-size: 13px;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  margin-left: 1px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #000;
+  padding: 6px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* LISTS */
+ul {
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+/* DECLARATION */
+.thankYou {
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.downloadBtn {
+  margin: 20px;
+  padding: 10px 18px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.downloadBtn:hover {
+  opacity: 0.85;
+}
+
+.table tbody tr {
+  background-color: #ffffff;
+}
+
+/* MOBILE SCALE */
+@media (max-width: 768px) {
+  .wrapper {
+    transform-origin: top center;
+    transform: scale(0.78);
+  }
+}
+
+@media (max-width: 475px) {
+  .wrapper {
+    transform-origin: top center;
+    transform: scale(0.42);
+  }
+}
+
+@media (max-width: 376px) {
+  .wrapper {
+    transform-origin: top center;
+    transform: scale(0.375);
+  }
+}
+
+@media (max-width: 320px) {
+  .wrapper {
+    transform-origin: top center;
+    transform: scale(0.325);
+  }
+}
+
+/* PDF FIX */
+.forceA4 {
+  width: 210mm !important;
+  min-height: 297mm !important;
+  box-shadow: none !important;
+}

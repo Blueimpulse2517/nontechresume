@@ -812,7 +812,6 @@ useEffect(() => {
               <option selected={jobsPerPageValue==100} value={100}>100</option>
             </select>  jobs per page
           </div>
-         
           <div className={styles.Uiwarpper}>
             <ul className={styles.ul} style={{ color: 'white', fontWeight: "bold" }}>
               <li style={{ backgroundColor: " rgb(40, 4, 99)" }} className={`${styles.li} ${styles.Jtitle}`}>Job Title</li>
