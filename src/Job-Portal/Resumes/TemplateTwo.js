@@ -3,7 +3,7 @@ import styles from "./templateTwo.module.css";
 import axios from "axios";
 import { generatePDF } from "./generatePDF";
 
-const TemplateTwo = () => {
+const TemplateTwo = ({themeColor}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,7 +68,8 @@ const TemplateTwo = () => {
         {/* Header */}
         <div className={styles.header}>
           <div className={styles.headerLeft}>
-            <h1 className={styles.name}>{profileData?.name || "Loading..."}</h1>
+            {/* {console.log("color",themecolor)} */}
+            <h1 className={styles.name} style={{color:themeColor}}>{profileData?.name || "Loading..."}</h1>
             <p className={styles.objective}>
               {profileData?.profileSummary || "Career objective not added yet"}
             </p>
@@ -98,7 +99,7 @@ const TemplateTwo = () => {
           {/* Left Section */}
           <div className={styles.left}>
           <section>
-  <h3>EDUCATION QUALIFICATION</h3>
+  <h3 style={{color:themeColor}}>EDUCATION QUALIFICATION</h3>
   {profileData?.qualificationDetails?.length > 0 ? (
     <ul className={styles.educationSection}>
       {profileData?.qualificationDetails?.map((edu, i) => (
@@ -121,7 +122,7 @@ const TemplateTwo = () => {
 
 
             <section>
-              <h3>ACHIEVEMENTS AND EXTRA-CURRICULAR ACTIVITIES</h3>
+              <h3 style={{color:themeColor}}>ACHIEVEMENTS AND EXTRA-CURRICULAR ACTIVITIES</h3>
               {profileData?.achievements?.length > 0 ? (
                 <ul>
                   {profileData?.achievements?.map((ach, i) => (
@@ -134,7 +135,7 @@ const TemplateTwo = () => {
             </section>
 
             <section>
-              <h3>ACADEMIC PROJECTS UNDERTAKEN</h3>
+              <h3 style={{color:themeColor}}>ACADEMIC PROJECTS UNDERTAKEN</h3>
               {profileData?.projects?.length > 0 ? (
                 <ul>
                   {profileData?.projects?.map((proj, i) => (
@@ -150,12 +151,12 @@ const TemplateTwo = () => {
           {/* Right Section */}
           <div className={styles.right}>
           <section>
-  <h3>SKILLS</h3>
+  <h3 style={{color:themeColor}}>SKILLS</h3>
   {profileData?.skills?.length > 0 ? (
-    <div className={styles.skillsWrapper}>
+    <div className={styles.skillsWrapper} >
       {profileData?.skills?.map((group, i) =>
         group.items?.map((item, j) => (
-          <span key={`${i}-${j}`} className={styles.skillTag}>
+          <span key={`${i}-${j}`} className={styles.skillTag} style={{backgroundColor:themeColor}}>
             {item}
           </span>
         ))
@@ -181,7 +182,7 @@ const TemplateTwo = () => {
             </section> */}
 
             <section>
-              <h3>LANGUAGES</h3>
+              <h3 style={{color:themeColor}}>LANGUAGES</h3>
               {profileData?.languages?.length > 0 ? (
                 <ul>
                   {profileData?.languages?.map((lang, i) => (
@@ -194,7 +195,7 @@ const TemplateTwo = () => {
             </section>
             
             <section>
-              <h3>WORK EXPERIENCE</h3>
+              <h3 style={{color:themeColor}}>WORK EXPERIENCE</h3>
               {profileData?.experiences?.length > 0 ? (
                 <ul>
                   {profileData?.experiences?.map((exp, i) => (
@@ -222,7 +223,7 @@ const TemplateTwo = () => {
             </section>
 
             <section>
-  <h3>PERSONAL DETAILS</h3>
+  <h3 style={{color:themeColor}}>PERSONAL DETAILS</h3>
   <div style={{ display: "flex", flexWrap: "wrap", gap: "0px" }}>
     <div className={styles.personalTag}>
       Gender: {profileData?.personalDetails[0]?.gender || "N/A"}

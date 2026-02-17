@@ -3,7 +3,7 @@ import styles from "./TemplateFour.module.css";
 import axios from "axios";
 import { generatePDF } from "./generatePDF";
 
-const TemplateFour = () => {
+const TemplateFour = ({themeColor}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -73,11 +73,11 @@ const TemplateFour = () => {
       <div id="template-four" className={styles.templateFour} >
       <div>
             {/* NAME */}
-          <h1 className={styles.name}>{profileData?.name || ""}</h1>
+          <h1 className={styles.name} style={{color:themeColor}}>{profileData?.name || ""}</h1>
 
           {/* ROLE + SPECIALIZATION ROW */}
           <div className={styles.roleRow}>
-            <span className={styles.rolePrimary}>Full Stack Developer</span>
+            <span className={styles.rolePrimary} style={{color:themeColor}}>Full Stack Developer</span>
             {/* <span className={styles.roleSecondary}>Cloud & Microservice Specialist</span> */}
           </div>
 
@@ -111,7 +111,7 @@ const TemplateFour = () => {
 
           {/* SUMMARY */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>SUMMARY</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>SUMMARY</div>
             <p className={styles.summaryText}>
               {profileData?.profileSummary ||""}
             </p>
@@ -119,7 +119,7 @@ const TemplateFour = () => {
 
           {/* EXPERIENCE */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>EXPERIENCE</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>EXPERIENCE</div>
 
             {(exp.length ? exp : [1, 2, 3]).slice(0, 3).map((item, i) => (
               <div key={i} className={styles.expEntry}>
@@ -165,7 +165,7 @@ const TemplateFour = () => {
 
           {/* EDUCATION */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>EDUCATION</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>EDUCATION</div>
 
             {(edu.length ? edu : [1]).map((e, i) => (
               <div key={i} className={styles.eduEntry}>
@@ -190,7 +190,7 @@ const TemplateFour = () => {
           <div className={styles.sectionBlock}>
 
           
-            <div className={styles.sectionTitle}>TECHNICAL STACK</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>TECHNICAL STACK</div>
             {profileData.skills
   ?.filter((group) =>
     ["frontend", "backend", "fullstack", "devops", "database"].includes(
@@ -213,7 +213,7 @@ const TemplateFour = () => {
 
           {/* PROJECTS */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>PROJECTS & PORTFOLIO</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>PROJECTS & PORTFOLIO</div>
 
             {proj && proj.length > 0 ? (
   proj.map((p, i) => (
@@ -231,7 +231,7 @@ const TemplateFour = () => {
 
           {/* ACHIEVEMENTS */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>KEY ACHIEVEMENTS</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>KEY ACHIEVEMENTS</div>
             {langs.length>0? 
             (ach.map((a, i) => (
               <div key={i} className={styles.achItem}>• {a}</div>
@@ -241,7 +241,7 @@ const TemplateFour = () => {
 
           {/* LANGUAGES */}
           <div className={styles.sectionBlock}>
-            <div className={styles.sectionTitle}>LANGUAGES</div>
+            <div className={styles.sectionTitle} style={{color:themeColor}}>LANGUAGES</div>
             {langs.length>0? 
             ( langs.map((l, i) => (
               <div key={i} className={styles.langItem}>{l}</div>

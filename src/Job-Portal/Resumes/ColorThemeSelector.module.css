@@ -1,0 +1,95 @@
+.wrapper {
+  margin: 16px 0;
+}
+
+.label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.swatches {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.active {
+  border: 3px solid #000;
+  box-shadow: 0 0 0 2px white inset;
+}
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 14px 0;
+    text-align: center;
+  }
+
+  .label {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .swatches {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .swatch {
+    width: 30px;
+    height: 30px;
+  }
+
+  .active {
+    border: 2px solid #000;
+    box-shadow: 0 0 0 2px white inset;
+  }
+}
+
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+  .swatch {
+    width: 26px;
+    height: 26px;
+  }
+
+  .swatches {
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}
+
+
+/* ================= EXTRA SMALL (320px) ================= */
+@media (max-width: 320px) {
+  .swatch {
+    width: 22px;
+    height: 22px;
+  }
+
+  .swatches {
+    gap: 6px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+}
+

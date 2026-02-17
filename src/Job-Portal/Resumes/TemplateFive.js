@@ -3,7 +3,7 @@ import styles from "./TemplateFive.module.css";
 import { generatePDF } from './generatePDF';
 import axios from 'axios';
 
-const TemplateFive = () => {
+const TemplateFive = ({themeColor}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -102,7 +102,7 @@ const TemplateFive = () => {
 
               
             </div> */}
-              <div><h1 style={{marginTop:"21%"}} className="resume-name">{profileData ? profileData.name : "Loading..."}</h1></div>
+              <div><h1 style={{marginTop:"21%", color:themeColor}} className="resume-name">{profileData ? profileData.name : "Loading..."}</h1></div>
               
             </div>
             <p className="summary">{pageLoader?<p>Loading...</p>:(profileData ? profileData.profileSummary : "No profile summary added")}</p>
@@ -136,12 +136,12 @@ const TemplateFive = () => {
           <div className="left-section">
           <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
             <div>
-  <h2 style={{ fontWeight: "700" }} className="section-title">
+  <h2 style={{ fontWeight: "700", color:themeColor }} className="section-title">
     EXPERIENCE
   </h2>
   </div>
   <div>
-  <h4  className='texp'>
+  <h4  style={{color:themeColor}} className='texp'>
     ( TOTAL EXPERIENCE - {profileData ? `${profileData.Experiance} Years )` : "Loading..."} 
   </h4>
   </div>
@@ -153,7 +153,7 @@ const TemplateFive = () => {
   profileData?.experiences?.length > 0 ? (
     profileData.experiences.map((exp, index) => (
       <div className="experience" key={index}>
-        <h3>
+        <h3 style={{color:themeColor}}>
           {exp.company}{exp.location && `, ${exp.location}`} — <strong>{exp.role}</strong>
         </h3>
 
@@ -223,7 +223,7 @@ const TemplateFive = () => {
             </div> */}
 
             <div className="skills">
-              <h4 style={{marginLeft:"10px"}}>CORE TECHNICAL SKILLS</h4>
+              <h4 style={{marginLeft:"10px" , color:themeColor}}>CORE TECHNICAL SKILLS</h4>
               {pageLoader ? (
   <p>Loading...</p>
 ) : profileData?.skills?.some(
@@ -233,7 +233,7 @@ const TemplateFive = () => {
     .filter((group) => group.heading?.toLowerCase() === "testing")
     .map((group, i) => (
       <div style={{ marginLeft: "32px" }} className="skill-section" key={i}>
-        <h5>{group.heading}</h5>
+        <h5 style={{color:themeColor}}>{group.heading}</h5>
         <ul>
           {group.items?.map((skill, j) => (
             <li key={j}>{skill}</li>
@@ -246,14 +246,14 @@ const TemplateFive = () => {
 )}
 
             </div>
-            <div style={{ marginLeft: "28px" }} className="certification">
-  <h4 style={{ marginLeft: "-19px" }}>CERTIFICATION</h4>
+            <div style={{ marginLeft: "28px", color:themeColor }} className="certification">
+  <h4 style={{ marginLeft: "-19px", color:themeColor }}>CERTIFICATION</h4>
   {pageLoader ? (
     <p>Loading...</p>
   ) : profileData && profileData.certifications ? (
     <ul style={{ paddingLeft: "20px" ,marginTop:"-15px"}}>
       {profileData.certifications.map((cert, index) => (
-        <li key={index}>{cert.trim()}</li>
+        <li key={index} style={{color:"black"}}>{cert.trim()}</li>
       ))}
     </ul>
   ) : (
@@ -280,7 +280,7 @@ const TemplateFive = () => {
 </div> */}
 </div>
 <div className="certification">
-  <h4 style={{color:"#007bff",fontWeight:"900",marginBottom:"4px"}}>QUALIFICATION:</h4>
+  <h4 style={{color:themeColor,fontWeight:"900",marginBottom:"4px"}}>QUALIFICATION:</h4>
   {pageLoader ? (
     <p>Loading...</p>
   ) : profileData && profileData.qualificationDetails && profileData.qualificationDetails.length > 0 ? (

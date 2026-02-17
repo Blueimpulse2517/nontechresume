@@ -149,6 +149,7 @@ const TemplateGallery = ({ onSelect, logoutresume, loginprofile }) => {
           <img src={template2} alt="Template Two" className="blurred" />
         </div>
 
+
         {/* <div
           className="template-card"
           onClick={() => {
