@@ -3,7 +3,7 @@ import styles from "./TemplateSeven.module.css";
 import axios from "axios";
 import { generatePDF } from "./generatePDF";
 
-const TemplateSeven = () => {
+const TemplateSeven = ({themeColor}) => {
   const [profileData, setProfileData] = useState(null);
   const studId = JSON.parse(localStorage.getItem("StudId"));
 
@@ -40,36 +40,36 @@ const TemplateSeven = () => {
         <div className={styles.innerBorder}>
 
         {/* HEADER */}
-        <h1 className={styles.title}>RESUME</h1>
+        <h1 className={styles.title} style={{color:themeColor}}>RESUME</h1>
 
         <div className={styles.header}>
           <div>
-            <strong>{profileData.name}</strong>
-            <div style={{ width: "45%" , marginBottom:"-27px"}}>
+            <strong style={{color:themeColor}}>{profileData.name}</strong>
+            <div style={{ width: "50%" , marginBottom:"-27px"}}>
               <p>{profileData.address}</p>
             </div>
           </div>
 
-          <div style={{width:"40%"}} className={styles.headerRight}>
+          <div  style={{width:"55%"}} className={styles.headerRight}>
             <p><strong>E-mail:</strong> {profileData.email}</p>
             <p><strong>Contact No:</strong> {profileData.phoneNumber}</p>
           </div>
         </div>
 
         {/* OBJECTIVE */}
-        <Section title="Objective">
-          <p>
+        <Section title="Objective" themeColor={themeColor} >
+          <p style={{color:"black"}}>
             {profileData.objective
               ? profileData.objective
               : "I wan to excel in the field with hard work, perseverance and dedication."}
           </p>
         </Section>
 
-        {/* EXPERIENCE */}
-        <Section title="Experience">
+ {/* EXPERIENCE */}
+        <Section title="Experience" themeColor={themeColor}>
           <ul>
             {profileData.experiences?.map((e, i) => (
-              <li key={i}>
+              <li style={{color:"black"}} key={i}>
                 {e.company} – {e.role}
               </li>
             ))}
@@ -77,8 +77,8 @@ const TemplateSeven = () => {
         </Section>
 
         {/* EDUCATION */}
-        <Section title="Educational Qualifications">
-          <table className={styles.table}>
+        <Section title="Educational Qualifications" themeColor={themeColor}>
+          <table className={styles.table} style={{color:"black"}}>
             <thead>
               <tr>
                 <th>Course</th>
@@ -101,14 +101,14 @@ const TemplateSeven = () => {
         </Section>
 
         {/* TECHNICAL SKILLS */}
-        <Section title="Technical Skills">
+        <Section title="Technical Skills" themeColor={themeColor}>
           {["Computer", "Typing"].map((heading) => {
             const group = profileData.skills?.find(
               (g) => g.heading === heading
             );
 
             return group && group.items?.length > 0 ? (
-              <p key={heading}>
+              <p style={{color:"black"}} key={heading}>
                 <strong>{heading}:</strong> {group.items.join(", ")}
               </p>
             ) : null;
@@ -116,19 +116,19 @@ const TemplateSeven = () => {
         </Section>
 
         {/* HOBBIES */}
-        <Section title="Hobbies">
+        <Section title="Hobbies" themeColor={themeColor}>
           <ul>
             {profileData.interests?.map((h, i) => (
-              <li key={i}>{h}</li>
+              <li style={{color:"black"}} key={i}>{h}</li>
             ))}
           </ul>
         </Section>
 
-
+       
 
         {/* PERSONAL DETAILS */}
-        <Section title="Personal Details">
-          <div className={styles.personalGrid}>
+        <Section title="Personal Details" themeColor={themeColor}>
+          <div className={styles.personalGrid} style={{color:"black"}}>
 
             <div className={styles.row}>
               <span className={styles.label}>Name</span>
@@ -142,13 +142,13 @@ const TemplateSeven = () => {
               <span>{profileData.personalDetails?.[0]?.fatherName || "N/A"}</span>
             </div>
 
-            <div className={styles.row}>
+            <div className={styles.row} style={{color:"black"}}>
               <span className={styles.label}>Mother Name</span>
               <span className={styles.colon}>:</span>
               <span>{profileData.personalDetails?.[0]?.motherName || "N/A"}</span>
             </div>
 
-            <div className={styles.row}>
+            <div className={styles.row} style={{color:"black"}}>
               <span className={styles.label}>Date of Birth</span>
               <span className={styles.colon}>:</span>
               <span>
@@ -161,19 +161,19 @@ const TemplateSeven = () => {
               </span>
             </div>
 
-            <div className={styles.row}>
+            <div className={styles.row} style={{color:"black"}}>
               <span className={styles.label}>Gender</span>
               <span className={styles.colon}>:</span>
               <span>{profileData.personalDetails?.[0]?.gender || "N/A"}</span>
             </div>
 
-            <div className={styles.row}>
+            <div className={styles.row} style={{color:"black"}}>
               <span className={styles.label}>Nationality</span>
               <span className={styles.colon}>:</span>
               <span>{profileData.personalDetails?.[0]?.Nationality || "N/A"}</span>
             </div>
 
-            <div className={styles.row}>
+            <div className={styles.row} style={{color:"black"}}>
               <span className={styles.label}>Languages Known</span>
               <span className={styles.colon}>:</span>
               <span>{profileData.languages?.join(", ") || "N/A"}</span>
@@ -183,14 +183,14 @@ const TemplateSeven = () => {
         </Section>
 
         {/* DECLARATION */}
-        <Section title="Declaration">
-          <p>
+        <Section title="Declaration" themeColor={themeColor}>
+          <p style={{color:"black"}}>
             I hereby affirm that all the above information in this document is
             true to the best of my knowledge.
           </p>
-          <p className={styles.thankYou}>Thank You.</p>
-          <p className={styles.place}><strong>Place:</strong></p>
-          <p className={styles.date}><strong>Date:</strong> __________</p>
+          <p className={styles.thankYou} style={{color:"black"}}>Thank You.</p>
+          <p className={styles.place} style={{color:"black"}}><strong>Place:</strong></p>
+          <p className={styles.date} style={{color:"black"}}><strong>Date:</strong> __________</p>
         </Section>
 
         </div>
@@ -203,10 +203,10 @@ const TemplateSeven = () => {
   );
 };
 
-const Section = ({ title, children }) => (
+const Section = ({ title, children, themeColor }) => (
   <>
-    <div className={styles.sectionTitle}>{title}</div>
-    <div className={styles.sectionContent}>{children}</div>
+    <div className={styles.sectionTitle} style={{color:themeColor}}>{title}</div>
+    <div className={styles.sectionContent} style={{color:themeColor}} >{children}</div>
   </>
 );
 

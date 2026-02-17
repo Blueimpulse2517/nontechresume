@@ -11,6 +11,7 @@ import TemplateFour from './TemplateFour';
 import TemplateFive from './TemplateFive';
 import TemplateSix from './TemplateSix';
 import TemplateSeven from './TemplateSeven';
+import ColorThemeSelector from './ColorThemeSelector';
 
   
 function AllResumes() {
@@ -60,6 +61,8 @@ function AllResumes() {
      getProfile();
   }, []);
 
+  const [themeColor, setThemeColor] = useState("#2563eb");
+
    const navigate = useNavigate()
   return (
 <>
@@ -87,7 +90,8 @@ function AllResumes() {
 
       {selectedTemplate && profileData && (
         <div style={{ padding: '20px' }}>
-          <div style={{display:"flex",marginBottom:"5px"}}>
+          <div style={{display:"flex", justifyContent:"space-between",marginBottom:"5px"}}>
+            <div>
           <button
   class={Style.jobdetailBackBtnContainer }
   onClick={() => {
@@ -112,16 +116,25 @@ function AllResumes() {
 >
   <div class={Style.updatebtn}>Update Profile</div>
 </button>
+</div>
+
+<div style={{marginLeft:"-6%"}}>
+    <ColorThemeSelector
+        selected={themeColor}
+        onChange={setThemeColor}
+      />
+  </div>
+  <div></div>
  
 </div>
-{/* {console.log("selected template",selectedTemplate)} */}
-          {selectedTemplate === 'one' && <TemplateOne data={profileData} />}
-          {selectedTemplate === 'two' && <TemplateTwo data={profileData} />}
-          {selectedTemplate === 'three' && <TemplateThree data={profileData} />}
-          {selectedTemplate === 'four' && <TemplateFour data={profileData} />}
-          {selectedTemplate === 'five' && <TemplateFive data={profileData} />}
-          {selectedTemplate === 'six' && <TemplateSix data={profileData} />}
-          {selectedTemplate === 'seven' && <TemplateSeven data={profileData} />}
+{/* {console.log("selected template",themeColor)} */}
+          {selectedTemplate === 'one' && <TemplateOne data={profileData} themeColor={themeColor} />}
+          {selectedTemplate === 'two' && <TemplateTwo data={profileData} themeColor={themeColor}/>}
+          {selectedTemplate === 'three' && <TemplateThree data={profileData} themeColor={themeColor} />}
+          {selectedTemplate === 'four' && <TemplateFour data={profileData} themeColor={themeColor} />}
+          {selectedTemplate === 'five' && <TemplateFive data={profileData} themeColor={themeColor} />}
+          {selectedTemplate === 'six' && <TemplateSix data={profileData} themeColor={themeColor} />}
+          {selectedTemplate === 'seven' && <TemplateSeven data={profileData} themeColor={themeColor}/>}
         </div>
         
       )}

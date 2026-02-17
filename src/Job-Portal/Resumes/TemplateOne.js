@@ -3,7 +3,7 @@ import './templateOne.css';
 import { generatePDF } from './generatePDF';
 import axios from 'axios';
 
-const TemplateOne = () => {
+const TemplateOne = ({themeColor}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -102,7 +102,7 @@ const TemplateOne = () => {
 
               
             </div> */}
-              <div><h1 style={{marginTop:"21%"}} className="resume-name">{profileData ? profileData.name : "Loading..."}</h1></div>
+              <div><h1 style={{marginTop:"21%", color:themeColor}} className="resume-name">{profileData ? profileData.name : "Loading..."}</h1></div>
               
             </div>
             <p className="summary">{pageLoader?<p>Loading...</p>:(profileData ? profileData.profileSummary : "No profile summary added")}</p>
@@ -136,12 +136,12 @@ const TemplateOne = () => {
           <div className="left-section">
           <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}>
             <div>
-  <h2 style={{ fontWeight: "700" }} className="section-title">
+  <h2 style={{ fontWeight: "700", color:themeColor }} className="section-title">
     EXPERIENCE
   </h2>
   </div>
   <div>
-  <h4  className='texp'>
+  <h4 style={{color:themeColor}} className='texp'>
     ( TOTAL EXPERIENCE - {profileData ? `${profileData.Experiance} Years )` : "Loading..."} 
   </h4>
   </div>
@@ -224,7 +224,7 @@ const TemplateOne = () => {
             </div> */}
 
             <div className="skills">
-              <h4 style={{marginLeft:"10px"}}>CORE TECHNICAL SKILLS</h4>
+              <h4 style={{marginLeft:"10px", color:themeColor}}>CORE TECHNICAL SKILLS</h4>
               {pageLoader ? (
   <p>Loading...</p>
 ) : profileData?.skills && profileData.skills.length > 0 ? (
@@ -256,7 +256,7 @@ const TemplateOne = () => {
 
             </div>
             <div style={{ marginLeft: "28px" }} className="certification">
-  <h4 style={{ marginLeft: "-19px" }}>CERTIFICATION</h4>
+  <h4 style={{ marginLeft: "-19px", color:themeColor }}>CERTIFICATION</h4>
   {pageLoader ? (
     <p>Loading...</p>
   ) : profileData && profileData.certifications ? (
@@ -289,7 +289,7 @@ const TemplateOne = () => {
 </div> */}
 </div>
 <div className="certification">
-  <h4 style={{color:"#007bff",fontWeight:"900",marginBottom:"4px"}}>QUALIFICATION:</h4>
+  <h4 style={{color:themeColor,fontWeight:"900",marginBottom:"4px"}}>QUALIFICATION:</h4>
   {pageLoader ? (
     <p>Loading...</p>
   ) : profileData && profileData.qualificationDetails && profileData.qualificationDetails.length > 0 ? (
