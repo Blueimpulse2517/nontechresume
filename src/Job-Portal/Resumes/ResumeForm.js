@@ -1224,17 +1224,17 @@ const escapeXml = (value) => {
 
         <input style={inputStyle}  placeholder="Name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} />
         {formstate!=="nontech"?
-        <textarea style={inputStyle} placeholder="Profile Summary" value={formData.profileSummary} onChange={(e) => handleChange('profileSummary', e.target.value)} />
+        <textarea style={inputStyle} disabled={(loginprofile==="cs_center")} placeholder="Profile Summary" value={formData.profileSummary} onChange={(e) => handleChange('profileSummary', e.target.value)} />
         :
-        <textarea style={inputStyle} placeholder="Objective" value={formData.objective} onChange={(e) => handleChange('objective', e.target.value)} />
+        <textarea style={inputStyle} disabled={(loginprofile==="cs_center")} placeholder="Objective" value={formData.objective} onChange={(e) => handleChange('objective', e.target.value)} />
         }<input type="text" ref={venueInputRef} value={formData.address} onChange={(e) => handleChange('address', e.target.value)} style={inputStyle} placeholder="Current Address" />
-        <input style={inputStyle} disabled placeholder="Email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} />
+        <input style={inputStyle}  placeholder="Email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} />
         {formstate==="fullstack" &&
         <input style={inputStyle}  placeholder="Linkedin" value={formData.linkedin?formData.linkedin:""} onChange={(e) => handleChange('linkedin', e.target.value)} />
       }
-        <input style={inputStyle} disabled placeholder="Total Experience" value={formData.totalExperience} onChange={(e) => handleChange('totalExperience', e.target.value)} />
-        <input style={inputStyle} disabled placeholder="Qualification" value={formData.qualification} />
-        <input style={inputStyle} disabled placeholder="College" value={formData.college} />
+        <input style={inputStyle}  placeholder="Total Experience" value={formData.totalExperience} onChange={(e) => handleChange('totalExperience', e.target.value)} />
+        <input style={inputStyle} placeholder="Qualification" value={formData.qualification} />
+        <input style={inputStyle}  placeholder="College" value={formData.college} />
 
         {/* QUALIFICATION DETAILS */}
         {screenSize.width > 850 ?
@@ -1248,12 +1248,18 @@ const escapeXml = (value) => {
             <tr style={{ background: "#eee" }}>
             <th style={{ border: "1px solid #ccc", padding: "8px" }}>School/College/<br></br>University Name</th>
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>Degree</th>
+              {!(loginprofile==="cs_center") &&
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>Field of study (Degree/Masters<br></br>/School)</th>
+                 }
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>Grade (% or CGPA)</th>
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>year of passing</th>
               {/* <th style={{ border: "1px solid #ccc", padding: "8px" }}>State Code</th> */}
+              {!(loginprofile==="cs_center") &&
+              <>
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>Location (Country/<br></br>Region)</th>
               <th style={{ border: "1px solid #ccc", padding: "8px" }}>City</th>
+              </>
+              }
               {/* <th style={{ border: "1px solid #ccc", padding: "8px" }}>Action</th> */}
             </tr>
           </thead>
@@ -1284,7 +1290,7 @@ const escapeXml = (value) => {
           }
         />
       </td>
-
+{!(loginprofile==="cs_center") &&
       <td>
         <input
           style={inputStyles}
@@ -1295,6 +1301,7 @@ const escapeXml = (value) => {
           }
         />
       </td>
+}
 
       <td>
         <input
@@ -1317,7 +1324,8 @@ const escapeXml = (value) => {
           }
         />
       </td>
-
+{!(loginprofile==="cs_center") &&
+   <>
       <td>
         <input
           style={{ ...inputStyles, width: "76%" }}
@@ -1339,6 +1347,8 @@ const escapeXml = (value) => {
           }
         />
       </td>
+      </>
+}
     </tr>
 
     {/* ROW 2: BUTTONS (RIGHT SIDE, NO STYLE CHANGE) */}
@@ -1396,12 +1406,14 @@ const escapeXml = (value) => {
       value={q.degree}
       onChange={(e) => handleQualificationChange(i, "degree", e.target.value)}
     />
+    {!(loginprofile==="cs_center") &&
     <input
       style={{ ...inputStyle, flex: "1 1 180px" }}
       placeholder="Study Field"
       value={q.studyField}
       onChange={(e) => handleQualificationChange(i, "studyField", e.target.value)}
     />
+}
     <input
       style={{ ...inputStyle, flex: "1 1 120px" }}
       placeholder="% or CGPA"
@@ -1415,6 +1427,8 @@ const escapeXml = (value) => {
       value={q.yop}
       onChange={(e) => handleQualificationChange(i, "yop", e.target.value)}
     />
+    {!(loginprofile==="cs_center") &&
+    <>
     <input
       style={{ ...inputStyle, flex: "1 1 120px" }}
       placeholder="Country"
@@ -1427,10 +1441,12 @@ const escapeXml = (value) => {
       value={q.city}
       onChange={(e) => handleQualificationChange(i, "city", e.target.value)}
     />
+    </>
+}
     <div style={{display:"flex", gap:"4px"}}>
-    <button style={buttonStyle} type="button" onClick={() => handleQualificationSave(i)}>Save</button>
-    <button style={buttonStyle} type="button" onClick={() => clearQualificationRow(i)}>Cancel</button>
-    <button style={buttonStyle} type="button" onClick={() => removeQualificationRow(i)}>Delete</button>
+    <button style={{...buttonStyle,height:"30px"}} type="button" onClick={() => handleQualificationSave(i)}>Save</button>
+    <button style={{...buttonStyle,height:"30px"}}  type="button" onClick={() => clearQualificationRow(i)}>Cancel</button>
+    <button style={{...buttonStyle,height:"30px"}}  type="button" onClick={() => removeQualificationRow(i)}>Delete</button>
     </div>
   </div>
 ))}
