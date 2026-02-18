@@ -66,7 +66,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* EDUCATION */}
-        <Section title="Educational Qualifications" themeColor={themeColor}>
+        <Section title="Educational Qualifications" themeColor={themeColor} >
           <table className={styles.table} style={{color:"black"}}>
             <thead>
               <tr>
@@ -186,9 +186,15 @@ const TemplateSix = ({themeColor}) => {
             I hereby affirm that all the above information in this document is
             true to the best of my knowledge.
           </p>
-          <p className={styles.thankYou} style={{color:"black"}}>Thank You.</p>
-          <p className={styles.place} style={{color:"black"}}><strong>Place:</strong></p>
-          <p className={styles.date} style={{color:"black"}}><strong>Date:</strong> __________</p>
+          <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+            <div >
+                <p className={styles.place} style={{color:"black"}}><strong>Place:</strong></p>
+                <p className={styles.date} style={{color:"black"}}><strong>Date:</strong> __________</p>
+            </div>
+            <div>
+                <p className={styles.thankYou} style={{color:"black"}}>Thank You.</p>
+            </div>
+          </div>
         </Section>
 
         </div>
