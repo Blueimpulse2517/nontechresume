@@ -14,7 +14,7 @@ const ResumeForm = () => {
     address: '',
     email: '',
     linkedin:'',
-    objective:'I wan to excel in the field with hard work, perseverance and dedication.',
+    objective:'My objective is to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self development and helps me achieve personal as well as organisational goals.',
     qualification: '',
     college: '',
     totalExperience: '',
@@ -1226,7 +1226,12 @@ const escapeXml = (value) => {
         {formstate!=="nontech"?
         <textarea style={inputStyle} disabled={(loginprofile==="cs_center")} placeholder="Profile Summary" value={formData.profileSummary} onChange={(e) => handleChange('profileSummary', e.target.value)} />
         :
-        <textarea style={inputStyle} disabled={(loginprofile==="cs_center")} placeholder="Objective" value={formData.objective} onChange={(e) => handleChange('objective', e.target.value)} />
+        <textarea
+  style={inputStyle}
+  placeholder="Objective"
+  value={formData.objective}
+  onChange={(e) => handleChange('objective', e.target.value)}
+/>
         }<input type="text" ref={venueInputRef} value={formData.address} onChange={(e) => handleChange('address', e.target.value)} style={inputStyle} placeholder="Current Address" />
         <input style={inputStyle}  placeholder="Email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} />
         {formstate==="fullstack" &&

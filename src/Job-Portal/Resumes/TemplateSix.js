@@ -57,16 +57,17 @@ const TemplateSix = ({themeColor}) => {
         </div>
 
         {/* OBJECTIVE */}
-        <Section title="Objective" themeColor={themeColor} >
+        <Section title="OBJECTIVE" themeColor={themeColor} >
           <p style={{color:"black"}}>
             {profileData.objective
               ? profileData.objective
-              : "I wan to excel in the field with hard work, perseverance and dedication."}
+              : "My objective is to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self development and helps me achieve personal as well as organisational goals."}
+
           </p>
         </Section>
 
         {/* EDUCATION */}
-        <Section title="Educational Qualifications" themeColor={themeColor} >
+        <Section title="EDUCATIONAL QUALIFACTION" themeColor={themeColor} >
           <table className={styles.table} style={{color:"black"}}>
             <thead>
               <tr>
@@ -90,7 +91,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* TECHNICAL SKILLS */}
-        <Section title="Technical Skills" themeColor={themeColor}>
+        <Section title="TICHNICAL SKILLS" themeColor={themeColor}>
           {["Computer", "Typing"].map((heading) => {
             const group = profileData.skills?.find(
               (g) => g.heading === heading
@@ -105,7 +106,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* HOBBIES */}
-        <Section title="Hobbies" themeColor={themeColor}>
+        <Section title="HOBBIES" themeColor={themeColor}>
           <ul>
             {profileData.interests?.map((h, i) => (
               <li style={{color:"black"}} key={i}>{h}</li>
@@ -114,7 +115,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* EXPERIENCE */}
-        <Section title="Experience" themeColor={themeColor}>
+        <Section title="EXPERIENCE" themeColor={themeColor}>
           <ul>
             {profileData.experiences?.map((e, i) => (
               <li style={{color:"black"}} key={i}>
@@ -125,7 +126,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* PERSONAL DETAILS */}
-        <Section title="Personal Details" themeColor={themeColor}>
+        <Section title="PERSONAL DETAILS" themeColor={themeColor}>
           <div className={styles.personalGrid} style={{color:"black"}}>
 
             <div className={styles.row}>
@@ -181,7 +182,7 @@ const TemplateSix = ({themeColor}) => {
         </Section>
 
         {/* DECLARATION */}
-        <Section title="Declaration" themeColor={themeColor}>
+        <Section title="DECLARATION" themeColor={themeColor}>
           <p style={{color:"black"}}>
             I hereby affirm that all the above information in this document is
             true to the best of my knowledge.
@@ -192,7 +193,7 @@ const TemplateSix = ({themeColor}) => {
                 <p className={styles.date} style={{color:"black"}}><strong>Date:</strong> __________</p>
             </div>
             <div>
-                <p className={styles.thankYou} style={{color:"black"}}>Thank You.</p>
+                <p className={styles.thankYou} style={{color:"black",marginRight:"11px"}}>Thank You.</p>
             </div>
           </div>
         </Section>
