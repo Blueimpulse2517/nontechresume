@@ -527,13 +527,13 @@ function AppliedUserProfile() {
                             </p>
                         </li>
                         <li style={{ backgroundColor: " rgb(40, 4, 99)", color: "white" }} className={`${styles.li} ${styles.Skills}`}> <b>Skills</b> </li>
-                        <li style={{ backgroundColor: " rgb(40, 4, 99)", color: "white" }} className={`${styles.li} ${styles.currentCTC}`}> <b>Curr. CTC</b>
+                        <li style={{ backgroundColor: " rgb(40, 4, 99)", color: "white" }} className={`${styles.li} ${styles.currentCTC}`}> <b>Curr. Salary</b>
                             <p style={{ display: "inline", marginLeft: "10px" }}>
                                 <i onClick={CurrCTCAscendingOrder} className={`${styles.arrow} ${styles.up}`}> </i>
                                 <i onClick={CurrCTCDescendingOrder} className={`${styles.arrow} ${styles.down}`}></i>
                             </p>
                         </li>
-                        <li style={{ backgroundColor: " rgb(40, 4, 99)", color: "white" }} className={`${styles.li} ${styles.ExpectedSalary}`}><b>Exp. CTC</b>
+                        <li style={{ backgroundColor: " rgb(40, 4, 99)", color: "white" }} className={`${styles.li} ${styles.ExpectedSalary}`}><b>Exp. Salary</b>
                             <p style={{ display: "inline", marginLeft: "10px" }}>
                                 <i onClick={ExpCTCAscendingOrder} className={`${styles.arrow} ${styles.up}`}> </i>
                                 <i onClick={ExpCTCDescendingOrder} className={`${styles.arrow} ${styles.down}`}></i>

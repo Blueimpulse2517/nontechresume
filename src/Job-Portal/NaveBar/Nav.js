@@ -513,7 +513,7 @@ function mycreatedresume() {
     <p className={Styles.text} ref={menuRef} onClick={myprofile}>My profile</p>
 
     <p className={Styles.text} ref={menuRef} onClick={MyJobApplied}>Jobs Applied</p>
-    <p className={Styles.text} ref={menuRef} onClick={MyDrivesApplied}>Registered <br></br>Walkin Drives</p>
+    {/* <p className={Styles.text} ref={menuRef} onClick={MyDrivesApplied}>Registered <br></br>Walkin Drives</p> */}
     
     {csprofile==="cs_center"&&
         <p className={Styles.text} ref={menuRef} onClick={mycreatedresume} >My Created <br></br>Resume</p>
