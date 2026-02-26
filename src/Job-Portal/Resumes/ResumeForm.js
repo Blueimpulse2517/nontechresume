@@ -1157,7 +1157,7 @@ const escapeXml = (value) => {
   >
     Export XML
   </button>
-
+{/* {console.log("template key", selectedTemplate)} */}
    <button
     style={{fontSize: "12px",fontWeight:700}}
     className={styles.tvbackbtn}

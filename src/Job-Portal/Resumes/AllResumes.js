@@ -12,6 +12,7 @@ import TemplateFive from './TemplateFive';
 import TemplateSix from './TemplateSix';
 import TemplateSeven from './TemplateSeven';
 import ColorThemeSelector from './ColorThemeSelector';
+import TemplateEight from './TemplateEight';
 
   
 function AllResumes() {
@@ -135,6 +136,7 @@ function AllResumes() {
           {selectedTemplate === 'five' && <TemplateFive data={profileData} themeColor={themeColor} />}
           {selectedTemplate === 'six' && <TemplateSix data={profileData} themeColor={themeColor} />}
           {selectedTemplate === 'seven' && <TemplateSeven data={profileData} themeColor={themeColor}/>}
+          {selectedTemplate === 'eight' && <TemplateEight data={profileData} themeColor={themeColor}/>}
         </div>
         
       )}

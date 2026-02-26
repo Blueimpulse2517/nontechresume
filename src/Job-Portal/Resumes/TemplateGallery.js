@@ -67,6 +67,24 @@ const TemplateGallery = ({ onSelect, logoutresume, loginprofile }) => {
           </p>
           <img src={template7} alt="Template Seven" className="blurred" />
         </div>
+
+        <div
+          className="template-card"
+          onClick={() => {
+            // if (logoutresume === true) {
+            //   setResumeAlert(true);
+            // } else {
+              openPreview("eight", template6);
+           
+          }}
+          >
+          <h2>Non-Tech Resume format 2</h2>
+          <p>
+            Best suited for non-technical job roles.
+          </p>
+          <img src={template6} alt="Template Six" className="blurred" />
+        </div> 
+
         <div
           className="template-card"
           onClick={() => { 
