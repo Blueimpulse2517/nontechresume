@@ -36,7 +36,7 @@ const ResumePreview = () => {
   if (!state) return null;
 
   const { img, templateKey, loginprofile } = state;
-  console.log("l[",loginprofile)
+  // console.log("l[",loginprofile)
 
   return (
     <>
@@ -179,6 +179,11 @@ const ResumePreview = () => {
                             state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
                         }
+                        else if (resumeAlert.selected === "eight") {
+                          navigate("/resume-form", {
+                            state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
+                          });
+                        }
                         else if (resumeAlert.selected === "four") {
                           navigate("/resume-form", {
                             state: { formstate: "fullstack", loginprofile:loginprofile, selectedTemplate: templateKey }
@@ -239,6 +244,11 @@ const ResumePreview = () => {
                           });
                         }
                         else if (resumeAlert.selected === "seven") {
+                          navigate("/resume-form", {
+                            state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
+                          });
+                        }
+                        else if (resumeAlert.selected === "eight") {
                           navigate("/resume-form", {
                             state: { formstate: "nontech", loginprofile:loginprofile, selectedTemplate: templateKey }
                           });
