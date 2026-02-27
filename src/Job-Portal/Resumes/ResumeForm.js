@@ -1228,6 +1228,7 @@ const escapeXml = (value) => {
         :
         <textarea
   style={inputStyle}
+  disabled
   placeholder="Objective"
   value={formData.objective}
   onChange={(e) => handleChange('objective', e.target.value)}
@@ -1238,7 +1239,11 @@ const escapeXml = (value) => {
         <input style={inputStyle}  placeholder="Linkedin" value={formData.linkedin?formData.linkedin:""} onChange={(e) => handleChange('linkedin', e.target.value)} />
       }
         <input style={inputStyle}  placeholder="Total Experience" value={formData.totalExperience} onChange={(e) => handleChange('totalExperience', e.target.value)} />
-        <input style={inputStyle} placeholder="Qualification" value={formData.qualification} />
+       <input
+  style={inputStyle}
+  placeholder="Qualification"
+  defaultValue={formData.qualification}
+/>
         <input style={inputStyle}  placeholder="College" value={formData.college} />
 
         {/* QUALIFICATION DETAILS */}
