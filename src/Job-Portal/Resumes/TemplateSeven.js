@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./TemplateSeven.module.css";
+import styles from "./TemplateEight.module.css";
 import axios from "axios";
 import { generatePDF } from "./generatePDF";
 
@@ -44,19 +44,20 @@ const TemplateSeven = ({themeColor}) => {
 
         <div className={styles.header}>
           <div>
-            <strong style={{color:themeColor}}>{profileData.name}</strong>
-            <div style={{ width: "50%" , marginBottom:"-27px"}}>
-              <p>{profileData.address}</p>
+            <strong style={{color:themeColor, fontSize:"22px"}}>{profileData.name}</strong>
+            <div style={{ width: "70%" , marginBottom:"-27px", marginTop:"-11px"}}>
+              <p style={{fontSize:"13px"}}>{profileData.address}</p>
             </div>
           </div>
 
-          <div  style={{width:"55%"}} className={styles.headerRight}>
-            <p><strong>E-mail:</strong> {profileData.email}</p>
-            <p><strong>Contact No:</strong> {profileData.phoneNumber}</p>
+          <div  style={{width:"55%", marginTop:"7px"}} className={styles.headerRight}>
+            <p style={{fontSize:"13px"}}><strong>E-mail:</strong> {profileData.email}</p>
+            <p style={{fontSize:"13px"}}><strong>Contact No:</strong> {profileData.phoneNumber}</p>
           </div>
         </div>
 
         {/* OBJECTIVE */}
+        <div style={{marginTop:"-13px"}}>
         <Section title="OBJECTIVE" themeColor={themeColor} >
           <p style={{color:"black"}}>
             {profileData.objective
@@ -65,41 +66,32 @@ const TemplateSeven = ({themeColor}) => {
 
           </p>
         </Section>
-
- {/* EXPERIENCE */}
-        <Section title="EXPERIENCE" themeColor={themeColor}>
-          <ul>
-            {profileData.experiences?.map((e, i) => (
-              <li style={{color:"black"}} key={i}>
-                {e.company} – {e.role}
-              </li>
-            ))}
-          </ul>
-        </Section>
-
+</div>
         {/* EDUCATION */}
-        <Section title="EDUCATION QUALIFICATION" themeColor={themeColor}>
-          <table className={styles.table} style={{color:"black"}}>
-            <thead>
-              <tr>
-                <th>Course</th>
-                <th>University / Board</th>
-                <th>Passing Year</th>
-                <th>Percentage</th>
-              </tr>
-            </thead>
-            <tbody>
-              {profileData.qualificationDetails?.map((q, i) => (
-                <tr key={i}>
-                  <td>{q.degree}</td>
-                  <td>{q.collegeName}</td>
-                  <td>{q.yop || "-"}</td>
-                  <td>{q.score || "-"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Section>
+        <Section title="EDUCATIONAL QUALIFACTION" themeColor={themeColor}>
+  <table className={styles.table} style={{ color: "black" }}>
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>University / Board</th>
+        <th>Passing Year</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      {Object.values(profileData.qualificationDetails || {})
+        .sort((a, b) => (b.yop || 0) - (a.yop || 0))
+        .map((q, i) => (
+          <tr key={i}>
+            <td>{q.degree}</td>
+            <td>{q.collegeName}</td>
+            <td>{q.yop || "-"}</td>
+            <td>{q.score || "-"}</td>
+          </tr>
+        ))}
+    </tbody>
+  </table>
+</Section>
 
         {/* TECHNICAL SKILLS */}
         <Section title="TECHNICAL SKILLS" themeColor={themeColor}>
@@ -118,14 +110,35 @@ const TemplateSeven = ({themeColor}) => {
 
         {/* HOBBIES */}
         <Section title="HOBBIES" themeColor={themeColor}>
-          <ul>
-            {profileData.interests?.map((h, i) => (
-              <li style={{color:"black"}} key={i}>{h}</li>
-            ))}
-          </ul>
-        </Section>
+  <ul>
+    <li style={{ color: "black" }}>
+      {Object.values(profileData.interests || {})
+        .slice(0, 4)
+        .join(", ")}
+    </li>
+  </ul>
+</Section>
 
-       
+        {/* EXPERIENCE */}
+        <Section title="EXPERIENCE" themeColor={themeColor}>
+  <ul
+    style={{
+      display: "grid",
+      gridTemplateRows: "repeat(4, auto)",
+      gridAutoFlow: "column",
+      gap: "4px 20px",
+      paddingLeft: "18px"
+    }}
+  >
+    {Object.values(profileData.experiences || {})
+      .slice(0, 8)
+      .map((e, i) => (
+        <li style={{ color: "black" }} key={i}>
+          {e.company} – {e.role}
+        </li>
+      ))}
+  </ul>
+</Section>
 
         {/* PERSONAL DETAILS */}
         <Section title="PERSONAL DETAILS" themeColor={themeColor}>
@@ -189,7 +202,7 @@ const TemplateSeven = ({themeColor}) => {
             I hereby affirm that all the above information in this document is
             true to the best of my knowledge.
           </p>
-           <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+          <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
             <div >
                 <p className={styles.place} style={{color:"black"}}><strong>Place:</strong></p>
                 <p className={styles.date} style={{color:"black"}}><strong>Date:</strong> __________</p>

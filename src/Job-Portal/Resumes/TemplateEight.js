@@ -94,7 +94,7 @@ const TemplateEight = ({themeColor}) => {
 </Section>
 
         {/* TECHNICAL SKILLS */}
-        <Section title="TICHNICAL SKILLS" themeColor={themeColor}>
+        <Section title="TECHNICAL SKILLS" themeColor={themeColor}>
           {["Computer", "Typing"].map((heading) => {
             const group = profileData.skills?.find(
               (g) => g.heading === heading
@@ -217,7 +217,7 @@ const TemplateEight = ({themeColor}) => {
       </div>
 
       <button onClick={handleDownloadPDF} className={styles.downloadBtn}>
-        Download Template 6 PDF
+        Download Template 8 PDF
       </button>
     </div>
   );
