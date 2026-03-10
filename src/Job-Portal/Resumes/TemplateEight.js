@@ -45,19 +45,19 @@ const TemplateEight = ({themeColor}) => {
         <div className={styles.header}>
           <div>
             <strong style={{color:themeColor, fontSize:"22px"}}>{profileData.name}</strong>
-            <div style={{ width: "70%" , marginBottom:"-27px", marginTop:"-11px"}}>
+            <div style={{ width: "74%" , marginBottom:"-27px", marginTop:"-11px"}}>
               <p style={{fontSize:"13px"}}>{profileData.address}</p>
             </div>
           </div>
 
           <div  style={{width:"55%", marginTop:"7px"}} className={styles.headerRight}>
-            <p style={{fontSize:"13px"}}><strong>E-mail:</strong> {profileData.email}</p>
+            <p style={{fontSize:"13px",marginBottom:"-10px"}}><strong>E-mail:</strong> {profileData.email}</p>
             <p style={{fontSize:"13px"}}><strong>Contact No:</strong> {profileData.phoneNumber}</p>
           </div>
         </div>
 
         {/* OBJECTIVE */}
-        <div style={{marginTop:"-13px"}}>
+        <div style={{marginTop:"-27px"}}>
         <Section title="OBJECTIVE" themeColor={themeColor} >
           <p style={{color:"black"}}>
             {profileData.objective
@@ -122,13 +122,13 @@ const TemplateEight = ({themeColor}) => {
         {/* EXPERIENCE */}
         <Section title="EXPERIENCE" themeColor={themeColor}>
   <ul
-    style={{
-      display: "grid",
-      gridTemplateRows: "repeat(4, auto)",
-      gridAutoFlow: "column",
-      gap: "4px 20px",
-      paddingLeft: "18px"
-    }}
+style={{
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",   // two columns (left + right)
+  gridTemplateRows: "repeat(3, auto)", // 3 rows
+  gap: "4px 20px",
+  paddingLeft: "18px"
+}}
   >
     {Object.values(profileData.experiences || {})
       .slice(0, 8)
