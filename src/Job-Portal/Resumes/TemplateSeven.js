@@ -51,7 +51,9 @@ const TemplateSeven = ({themeColor}) => {
           </div>
 
           <div  style={{width:"55%", marginTop:"7px"}} className={styles.headerRight}>
-            <p style={{fontSize:"13px"}}><strong>E-mail:</strong> {profileData.email}</p>
+          <p style={{ fontSize: "13px", marginBottom: "4px" }}>
+  <strong>E-mail:</strong> {profileData.email}
+</p>
             <p style={{fontSize:"13px"}}><strong>Contact No:</strong> {profileData.phoneNumber}</p>
           </div>
         </div>
@@ -123,12 +125,12 @@ const TemplateSeven = ({themeColor}) => {
         <Section title="EXPERIENCE" themeColor={themeColor}>
   <ul
     style={{
-      display: "grid",
-      gridTemplateRows: "repeat(4, auto)",
-      gridAutoFlow: "column",
-      gap: "4px 20px",
-      paddingLeft: "18px"
-    }}
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",   // two columns (left + right)
+  gridTemplateRows: "repeat(3, auto)", // 3 rows
+  gap: "4px 20px",
+  paddingLeft: "18px"
+}}
   >
     {Object.values(profileData.experiences || {})
       .slice(0, 8)
