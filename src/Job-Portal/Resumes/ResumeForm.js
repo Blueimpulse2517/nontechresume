@@ -1244,7 +1244,7 @@ const escapeXml = (value) => {
   placeholder="Qualification"
   defaultValue={formData.qualification}
 />
-        <input style={inputStyle}  placeholder="College" value={formData.college} />
+        {/* <input style={inputStyle}  placeholder="College" value={formData.college} /> */}
 
         {/* QUALIFICATION DETAILS */}
         {screenSize.width > 850 ?
