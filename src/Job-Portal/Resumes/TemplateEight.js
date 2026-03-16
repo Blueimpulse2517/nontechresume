@@ -57,7 +57,7 @@ const TemplateEight = ({themeColor}) => {
         </div>
 
         {/* OBJECTIVE */}
-        <div style={{marginTop:"-27px"}}>
+        <div style={{marginTop:"-23px"}}>
         <Section title="OBJECTIVE" themeColor={themeColor} >
           <p style={{color:"black"}}>
             {profileData.objective
