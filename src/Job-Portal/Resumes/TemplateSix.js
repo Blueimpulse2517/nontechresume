@@ -131,7 +131,7 @@ const TemplateSix = ({themeColor}) => {
 }}
   >
     {Object.values(profileData.experiences || {})
-      .slice(0, 8)
+      .slice(0, 6)
       .map((e, i) => (
         <li style={{ color: "black" }} key={i}>
           {e.company} – {e.role}
