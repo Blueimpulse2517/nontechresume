@@ -1,13 +1,19 @@
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 export const generatePDF = async (elementId, filename = "resume.pdf") => {
   const input = document.getElementById(elementId);
 
-  // Clone the element so we don't change live DOM
+  // Clone element
   const clone = input.cloneNode(true);
 
-  // Replace profile image with stored Base64
+  // 🔥 Apply inline fixes (instead of CSS)
+  clone.style.width = "794px"; // A4 width in px
+  clone.style.padding = "20px";
+  clone.style.boxSizing = "border-box";
+  clone.style.background = "#fff";
+
+  // Replace image with Base64
   const base64Image = localStorage.getItem("profileImageBase64");
   if (base64Image) {
     const imgTags = clone.querySelectorAll("img");
@@ -16,33 +22,48 @@ export const generatePDF = async (elementId, filename = "resume.pdf") => {
     });
   }
 
-  // Create a temporary container off-screen
+  // Hidden container
   const container = document.createElement("div");
   container.style.position = "fixed";
   container.style.left = "-9999px";
-  container.style.top = "0";
   container.appendChild(clone);
   document.body.appendChild(container);
 
+  // Capture full height
   const canvas = await html2canvas(clone, {
-    useCORS: true,
-    allowTaint: false,
     scale: 2,
+    useCORS: true,
+    windowWidth: clone.scrollWidth,
+    windowHeight: clone.scrollHeight,
   });
 
   const imgData = canvas.toDataURL("image/png");
+
   const pdf = new jsPDF("p", "mm", "a4");
 
   const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+  const pdfHeight = pdf.internal.pageSize.getHeight();
 
-  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  const imgWidth = pdfWidth;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  let heightLeft = imgHeight;
+  let position = 0;
+
+  // First page
+  pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+  heightLeft -= pdfHeight;
+
+  // 🔥 FIX: avoid extra blank page
+  while (heightLeft > 10) {
+    position = heightLeft - imgHeight;
+    pdf.addPage();
+    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+    heightLeft -= pdfHeight;
+  }
+
   pdf.save(filename);
 
-  // Clean up
   document.body.removeChild(container);
 };
-
-
-
 
