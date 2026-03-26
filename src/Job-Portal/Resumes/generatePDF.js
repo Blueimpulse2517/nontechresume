@@ -41,26 +41,26 @@ export const generatePDF = async (elementId, filename = "resume.pdf") => {
 
   const pdf = new jsPDF("p", "mm", "a4");
 
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = pdf.internal.pageSize.getHeight();
+const pdfWidth = pdf.internal.pageSize.getWidth();
+const pdfHeight = pdf.internal.pageSize.getHeight();
 
-  const imgWidth = pdfWidth;
-  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+const imgWidth = pdfWidth;
+const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-  let heightLeft = imgHeight;
-  let position = 0;
+let heightLeft = imgHeight;
+let position = 0;
 
-  // First page
+// First page
+pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+heightLeft -= pdfHeight;
+
+// ✅ FIXED LOOP (no extra page)
+while (heightLeft > pdfHeight) {
+  position = -(imgHeight - heightLeft);
+  pdf.addPage();
   pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
   heightLeft -= pdfHeight;
-
-  // 🔥 FIX: avoid extra blank page
-  while (heightLeft > 10) {
-    position = heightLeft - imgHeight;
-    pdf.addPage();
-    pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-    heightLeft -= pdfHeight;
-  }
+}
 
   pdf.save(filename);
 

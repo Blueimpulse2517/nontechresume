@@ -57,7 +57,7 @@ const TemplateSix = ({themeColor}) => {
         </div>
 
         {/* OBJECTIVE */}
-        <div style={{marginTop:"-23px"}}>
+        <div style={{marginTop:"-16px"}}>
         <Section title="OBJECTIVE" themeColor={themeColor} >
           <p style={{color:"black"}}>
             {profileData.objective
