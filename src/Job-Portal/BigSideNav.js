@@ -77,7 +77,6 @@ function SidebarNav(props) {
     }
   }, [location.pathname]); 
 
-
 //   const [query, setQuery] = useState("");
 //   const [suggestions, setSuggestions] = useState([]);
 
@@ -137,7 +136,6 @@ function SidebarNav(props) {
 //  };
 let EmployeeAuth = localStorage.getItem("EmpLog")
 let StudentAuth = localStorage.getItem("StudLog")
-
 
   return (
   <>
@@ -208,13 +206,12 @@ let StudentAuth = localStorage.getItem("StudLog")
         </div>
       )} */}
 
-
         {/* <p onClick={()=>{navigate("/")}} className={`${Styles.p} `}>Home </p> */}
         <p onClick={()=>{navigate("/Blogs"); update("Blogs")}} className={`${Styles.textBigSodeBar} ${value==="Blogs"?Styles.active:""}`}>Blogs</p>
        {!EmployeeAuth&&
        <>
         <p onClick={()=>{navigate("/AllCareerJobs"); update("AllCareerJobs")}} className={`${Styles.textBigSodeBar} ${value==="AllCareerJobs"?Styles.active:""}`}>ITwalkin Career</p>   
-        <p onClick={()=>{navigate("/Walkin-Drives"); update("AllWalkinDrive")}} className={`${Styles.textBigSodeBar} ${value==="AllWalkinDrive"?Styles.active:""} `}>Walkin Drives</p>
+        {/* <p onClick={()=>{navigate("/Walkin-Drives"); update("AllWalkinDrive")}} className={`${Styles.textBigSodeBar} ${value==="AllWalkinDrive"?Styles.active:""} `}>Walkin Drives</p> */}
         {StudentAuth? <p onClick={() => {
   navigate("/", {
     state: { logoutresume: false },
@@ -226,7 +223,7 @@ let StudentAuth = localStorage.getItem("StudLog")
           state: { loginpage: "resume" },
         }); update("AllResumes")}} className={`${Styles.textBigSodeBar} ${value==="AllResumes"?Styles.active:""} `}>Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup></p>
         }
-        <p onClick={()=>{navigate("/consultation-services"); update("consulltancy")}} className={`${Styles.textBigSodeBar} ${value==="consulltancy"?Styles.active:""} `}>Consultation Services </p>
+        {/* <p onClick={()=>{navigate("/consultation-services"); update("consulltancy")}} className={`${Styles.textBigSodeBar} ${value==="consulltancy"?Styles.active:""} `}>Consultation Services </p> */}
         </>
        }
         <p onClick={()=>{navigate("/support/help"); update("AllHelps")}} className={`${Styles.textBigSodeBar} ${value==="AllHelps"?Styles.active:""} `}>Help/Support</p>
@@ -253,3 +250,4 @@ let StudentAuth = localStorage.getItem("StudLog")
 }
 
 export default SidebarNav
+
