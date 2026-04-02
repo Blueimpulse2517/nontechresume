@@ -368,8 +368,8 @@ function mycreatedresume() {
                   </div>
                   <div><NavLink to="/resumes" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>
                    Resume Builder <sup style={{border:"2px solid white",borderRadius:"25px",padding:"1px",fontFamily:"monospace"}}>Beta</sup> </NavLink></div>
-                   <div><NavLink to="/consultation-services" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>Consultation Services </NavLink>
-                  </div>
+                   {/* <div><NavLink to="/consultation-services" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>Consultation Services </NavLink>
+                  </div> */}
                    {/* <button
   style={{
     backgroundColor: 'rgb(40, 4, 99)',
@@ -525,7 +525,7 @@ function mycreatedresume() {
 </div>
 : ""}      
                 </div>
-                <div>
+                {/* <div>
                 {props.flashVisible && (
                        <div className={Styles.blast}>
                          <img
@@ -536,18 +536,18 @@ function mycreatedresume() {
                          />
                        </div>
                      )}
-                </div>
+                </div> */}
                 <div>
                       {
-                       <div className={Styles.blast}>
-                         <img
-                           onClick={reDirecttoFraud}
-                           src="/report-fraud.png"
-                           alt="Walk-in Drive"
-                           ref={driveImgRef}
-                           style={{ width: "60px", borderRadius: "5px", marginTop: "-10px" }}
-                         />
-                       </div>
+                      //  <div className={Styles.blast}>
+                      //    <img
+                      //      onClick={reDirecttoFraud}
+                      //      src="/report-fraud.png"
+                      //      alt="Walk-in Drive"
+                      //      ref={driveImgRef}
+                      //      style={{ width: "60px", borderRadius: "5px", marginTop: "-10px" }}
+                      //    />
+                      //  </div>
                      }
                       </div>
                 </div>
@@ -699,9 +699,9 @@ function mycreatedresume() {
                  <div>
                   <NavLink to="/Post-Help-Questions" className={Styles.PostHelpLink} style={navLinkStyles}>Post Help Questions</NavLink>
                  </div>
-                 <div>
+                 {/* <div>
                  <NavLink to="/PostDrives" className={Styles.PostDriveLink} style={navLinkStyles}>Post Walkin Drive</NavLink>
-                 </div>
+                 </div> */}
                  <div> 
                   <NavLink to="/Search-Candidate" className={Styles.SearchCandidates} style={navLinkStyles}>Employer Home</NavLink>
                   </div>
@@ -712,7 +712,7 @@ function mycreatedresume() {
                           <div className={Styles.Empdropdownwrapper} ref={menuRef} >
                             <p className={Styles.text} ref={menuRef} onClick={EmployeeProfile} >My profile</p>
                             <p className={Styles.text} ref={menuRef} onClick={mypostedjob}>My posted Jobs</p>
-                            <p className={Styles.text} ref={menuRef} onClick={myposteddrive}>My posted Drives</p>
+                            {/* <p className={Styles.text} ref={menuRef} onClick={myposteddrive}>My posted Drives</p> */}
                             {/* <p className={Styles.text} ref={menuRef} onClick={hrDashboard}>HR/Employer<br></br> Dashboard</p> */}
                             <p className={Styles.text} ref={menuRef} onClick={mypostedArticle}>Posted Articles</p>
                             <p className={Styles.text} ref={menuRef} onClick={PostBlogs}>Write Article</p>
@@ -902,7 +902,7 @@ function mycreatedresume() {
 
                          }
                         </div> */}
-                        <div><NavLink to="/consultation-services" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>Consultation Services </NavLink></div>
+                        {/* <div><NavLink to="/consultation-services" className={Styles.AllJobJobSeeker}  style={navLinkStyles}>Consultation Services </NavLink></div> */}
 
                         {/* <div ref={consultAlertRef} style={{position:"relative"}}>
                         <div onClick={()=>setconsultAlert((prev)=>prev=!prev)} className={Styles.AllJobJobSeeker} style={{cursor:"pointer"}}>
@@ -1214,7 +1214,7 @@ function mycreatedresume() {
 
                     : ""}
                       </div>
-                      <div>
+                      {/* <div>
                       {props.flashVisible && (
                        <div className={Styles.blast}>
                          <img
@@ -1226,7 +1226,7 @@ function mycreatedresume() {
                          />
                        </div>
                      )}
-                      </div>
+                      </div> */}
                       <div>
                       {
                         <div ref={fraudalertRef} style={{position:"relative"}}>
@@ -1376,7 +1376,7 @@ function mycreatedresume() {
                 <img className={`${Styles.Icon} ${Styles.MobJobseekerProfileIcon}`} src={loginuser} ref={imgRef} onClick={() => setShowprofile((prev) => !prev)} />
 
                 </div>
-                <div>
+                {/* <div>
                 {props.flashVisible && (
                        <div className={Styles.blast} style={{cursor:"pointer"}}>
                          <img
@@ -1387,7 +1387,7 @@ function mycreatedresume() {
                          />
                        </div>
                      )}
-                </div>
+                </div> */}
                 </div>
                  </div>
 
@@ -1498,7 +1498,7 @@ className={props.ShowSideNave ? "fas fa-times" : "fas fa-bars"} ref={SimgRef} on
                     </div>
                      : ""}
                     </div>
-                    <div>
+                    {/* <div>
                     {props.flashVisible && (
                        <div className={Styles.blast} style={{cursor:"pointer",marginLeft:"21%"}}>
                          <img
@@ -1509,7 +1509,7 @@ className={props.ShowSideNave ? "fas fa-times" : "fas fa-bars"} ref={SimgRef} on
                          />
                        </div>
                      )}
-                    </div>
+                    </div> */}
                   </div>
                   
                   </div>
@@ -1717,13 +1717,13 @@ onClick={() => {
                     </div>
                     </div>
                     <div className={Styles.fullnavewrapperLSMobile}>
-                      <div>
+                      {/* <div>
                           {props.flashVisible && (
                          <div className={Styles.blast} style={{cursor:"pointer"}}>
                           <img onClick={reDirecttoDrive} src="/drive.png" alt="Walk-in Drive" ref={driveImgRef} class={Styles.flashDriveHome}/>
                          </div>
                           )}
-                      </div>
+                      </div> */}
                        <div>
                          <img className={`${Styles.MobloginLogo} `} src={logIn} ref={imgRef} onClick={() =>    setShowprofile((prev) => !prev)} />
                          {showprofile ?

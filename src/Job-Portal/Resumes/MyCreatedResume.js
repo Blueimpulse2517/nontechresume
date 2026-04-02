@@ -11,7 +11,6 @@ import {jobTags} from '../Tags.js'
 import HTMLReactParser from 'html-react-parser'
 
 
-
 import useScreenSize from '../SizeHook';
 import socketIO from 'socket.io-client';
 
@@ -110,7 +109,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
       })
   }
 
-
   const navigate = useNavigate()
   const Location = useLocation()
 
@@ -139,7 +137,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
       })
   }
 
-
     useEffect(() => {
       if (jobTagsIds?.length < 1) {
         getjobs()
@@ -147,7 +144,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
         getTagId();
       }
     }, [currentPage, recordsPerPage])
-
 
  // ---------------------------fake alert-----------
  const [activeAlertId, setActiveAlertId] = useState(null);
@@ -188,7 +184,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
    };
  }, []);
     
-
 
 
   async function applyforOtherJob(Link) {
@@ -373,7 +368,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
       })
   }
 
-
   async function getBothFiltered(jobTitle) {
 
     await axios.post(`/jobpost/getBothjobFilter/${jobLocation}`, { jobTitle })
@@ -389,7 +383,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
         alert("some thing went wrong")
       })
   }
-
 
 
   function firstPage(id) {
@@ -463,7 +456,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
 // ----------------------exp----------------------  
 
 
-
 // ----------------------exp-----------------
 
   // const [pathChanged, setPathChanged] = useState(false);
@@ -501,7 +493,6 @@ function MyCreatedResume({nopageFilter,setNoPageFilter,searchKey, setsearchKey,F
       changeTags()
     }
   },[Active])
-
 
   async function filterByJobTitle(key) {
 // console.log("clicked")
@@ -587,10 +578,11 @@ const selectedTag=useRef("")
 
   return (
     <>
-
+ <h2 style={{marginLeft:"10px", fontWeight:"800", marginTop:"6px", marginBottom:"-15px"}}> My Created Resume  </h2>
       {screenSize.width > 850 ?
         <>
         <div className={styles.NavConetenetWrapper}>
+          
 
 {/* <div className={styles.LocationFilterWrapper}>
 <div ref={dropdownRef} style={{ position: "relative" }}>
@@ -698,7 +690,7 @@ const selectedTag=useRef("")
 
       {screenSize.width > 850 ?
         <>
-
+        
           <div className={styles.JobtitleFilterWrapper} style={{marginTop:"65px"}} >
             <buton className={Active?.length===0?styles.active:styles.JobtitleFilter} onClick={() => { getjobs() }}>All</buton>
             {
@@ -830,7 +822,6 @@ style={{ cursor: "pointer", textDecoration: "underline", color: "blue" }}>{items
                         }
                       */}
                         {/* <li className={`${styles.li} ${styles.JobType}`}>{items.jobtype}</li> */}
-
 
                         <li className={`${styles.li} ${styles.date}`}>
                           {new Date(items.createdAt).toLocaleString(
@@ -1011,7 +1002,6 @@ style={{ cursor: "pointer", textDecoration: "underline", color: "blue" }}>{items
             
                        <li className={`${styles.li} ${styles.Source}`} >ITwalkin</li>
 
-
                         {
                           !items.Source ?
 
@@ -1113,7 +1103,6 @@ style={{ cursor: "pointer", textDecoration: "underline", color: "blue" }}>{items
             </div>
 
           </div>
-
 
         </>
         :
@@ -1283,10 +1272,8 @@ style={{ cursor: "pointer", textDecoration: "underline", color: "blue" }}>{items
                           <span className={styles.skillsHeading}>Skills: </span><span className={styles.skills}>{job.skills}</span><br></br>
                         </div>
 
-
                         <div className={styles.ApplyPackageJobseeker}>
                           <p style={{marginLeft: "20px"}} className={styles.salaryRangeJobseeker}><span>&#8377;</span>{job.salaryRange==="Not disclosed" ? "Not Disclosed":job.salaryRange+"LPA" }</p>
-
 
                           {job.jobSeekerId.find((jobseeker) => {
                             return (
@@ -1490,3 +1477,5 @@ style={{ cursor: "pointer", textDecoration: "underline", color: "blue" }}>{items
 }
 
 export default MyCreatedResume
+
+
