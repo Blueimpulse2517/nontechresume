@@ -372,7 +372,7 @@ const Modal = ({ isregCheck,isStuOpen, onClose,cslogin, csreg, children, msalIns
                
               }}
             >
-             {csreg?"Login as CS Center":"Login as Jobseeker"}
+             {csreg?"Login as Common Services Centre":"Login as Jobseeker"}
             </button>
             <button
               onClick={() => { 
@@ -414,10 +414,10 @@ const Modal = ({ isregCheck,isStuOpen, onClose,cslogin, csreg, children, msalIns
 						{isregCheck === true ? (
   <p className={styles.Loginpage}>New Job Seeker Registration</p>
 ) : cslogin === true ? (
-  <p className={styles.Loginpage} style={{marginLeft:"30%"}}>CS Center Login</p>
+  <p className={styles.Loginpage} style={{marginLeft:"7%"}}>Common Services Centre Login</p>
 ) 
 : csreg === true ? (
-  <p className={styles.Loginpage} style={{marginLeft:"20%"}}>CS Center Registration</p>
+  <p className={styles.Loginpage} style={{marginLeft:"3%"}}>Common Services Centre Registration</p>
 ): (
   <p className={styles.Loginpage}>Job Seeker Login</p>
 )}
