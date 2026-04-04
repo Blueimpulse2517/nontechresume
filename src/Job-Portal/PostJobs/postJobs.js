@@ -427,12 +427,11 @@ const [showTooltip, setShowTooltip] = useState(false);
                                         <h4 className={Style.jobHeadline}>Qualification Needed**</h4>
 
                                         <div style={{ marginTop: "-10px" }}>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "B.E/CSE"} value="B.E/CSE" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />B.E(CSE) </label>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "B.E/Civil"} value="B.E/Civil" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />B.E(Civil) </label>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "B.E/Mech"} value="B.E/Mech" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />B.E(Mech) </label>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "B.E/ECE"} value="B.E/ECE" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />B.E(ECE) </label>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "B.E/IT"} value="B.E/IT" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />B.E(IT) </label>
-                                            <label><input name="Qualification" type="radio" checked={qualification === "Others"} value="Others" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />Others</label>
+                                            <label><input name="Qualification" type="radio" checked={qualification === "10th Pass"} value="10th Pass" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />10th Pass </label>
+                                            <label><input name="Qualification" type="radio" checked={qualification === "12th Pass"} value="12th Pass" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />12th Pass </label>
+                                            <label><input name="Qualification" type="radio" checked={qualification === "Graduate"} value="Graduate" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />Graduate </label>
+                                            <label><input name="Qualification" type="radio" checked={qualification === "Post Graduate"} value="Post Graduate" onChange={(e) => { setQualification(e.target.value); setOthers(false); }} />Post Graduate </label>
+                                            
 
                                             {/* <label><input name="Qualification" type="radio" value="others" onClick={(e) => { setOthers((prev) => !prev); setQualification("") }} />others </label> */}
                                             {/* <label><input name="Qualification" type="radio" value="others" onChange={(e) => { setQualification(e.target.value); setOthers(true); }} />others </label> */}
