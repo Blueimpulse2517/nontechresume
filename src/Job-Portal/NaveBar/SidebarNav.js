@@ -264,7 +264,7 @@ const [fraudAlert, setfraudAlert]=useState(false)
 <p onClick={() => { navigate("/EmployeeLogin", {state: { loginpage: "EmpregCheck" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }} className={`${Styles.textinMobileSodeBar} `}>Employer Registration </p>
 <p onClick={() => { navigate("/JobSeekerLogin", {state: { loginpage: "jsregCheck" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }}className={`${Styles.textinMobileSodeBar} `} >Job Seeker Registration</p>
 <p onClick={() => { navigate("/JobSeekerLogin", {state: { loginpage: "csreg" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }}className={`${Styles.textinMobileSodeBar} `} >
-  Common Services Centre Registration
+  CSC Registration
 </p>
 
         </div>
