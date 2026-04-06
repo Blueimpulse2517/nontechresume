@@ -358,9 +358,27 @@ useEffect(() => {
   {loginpage==="jsregCheck"?
    (<p className={styles.Loginpage} style={{marginLeft:"27px"}}> New Job Seeker Registration page</p>)
     :loginpage==="cs"?
-   (<p className={styles.Loginpage} style={{marginLeft:"19px"}}> New CSC Login page</p>)
+   (<p
+  className={styles.Loginpage}
+  style={{ marginLeft: "19px" }}
+>
+  New{" "}
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Login page
+</p>)
    :loginpage==="csreg"?
-   (<p className={styles.Loginpage} style={{marginLeft:"2px"}}> New CSC Registration page</p>)
+   (<p
+  className={styles.Loginpage}
+  style={{ marginLeft: "2px",}}
+>
+  New{" "}
+  <span style={{ color: "blue", fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey", fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold"  }}>C</span>{" "}
+  Registration page
+</p>)
 :
   <p className={styles.Loginpage}> Job Seeker Login page  </p>
   }

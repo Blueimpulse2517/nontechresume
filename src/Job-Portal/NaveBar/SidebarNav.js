@@ -263,8 +263,20 @@ const [fraudAlert, setfraudAlert]=useState(false)
         <div style={{marginLeft:"10px"}}>
 <p onClick={() => { navigate("/EmployeeLogin", {state: { loginpage: "EmpregCheck" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }} className={`${Styles.textinMobileSodeBar} `}>Employer Registration </p>
 <p onClick={() => { navigate("/JobSeekerLogin", {state: { loginpage: "jsregCheck" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }}className={`${Styles.textinMobileSodeBar} `} >Job Seeker Registration</p>
-<p onClick={() => { navigate("/JobSeekerLogin", {state: { loginpage: "csreg" }});props.setShowSideNaveProps(false);setShow(false); window.scrollTo({top:0}) }}className={`${Styles.textinMobileSodeBar} `} >
-  CSC Registration
+<p
+  onClick={() => {
+    navigate("/JobSeekerLogin", { state: { loginpage: "csreg" } });
+    props.setShowSideNaveProps(false);
+    setShow(false);
+    window.scrollTo({ top: 0 });
+  }}
+  className={`${Styles.textinMobileSodeBar}`}
+  style={{cursor: "pointer" }}
+>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Registration
 </p>
 
         </div>
