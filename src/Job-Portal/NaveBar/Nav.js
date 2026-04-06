@@ -1195,7 +1195,23 @@ function mycreatedresume() {
                       <div style={{right:"17%", width:"100px"}} className={Styles.dropdownwrapperHomeRegistration} ref={regmenuRef} >
                         <p onClick={() => { handleEmpOpen(); handleStuClose(); setisEmpregCheck(true) }}>Employer Registration</p>
                         <p onClick={() => { handleStuOpen(); handleClose(); setisregCheck(true) }}>Job Seeker Registration</p>
-                        <p onClick={() => { handleStuOpen(); handleClose(); setcsreg(true); setcslogin(false)  }}> CSC Registration</p>
+                        <p
+  onClick={() => {
+    handleStuOpen();
+    handleClose();
+    setcsreg(true);
+    setcslogin(false);
+  }}
+  style={{
+    
+    cursor: "pointer",
+  }}
+>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Registration
+</p>
                       </div>
 
                     : ""}
@@ -1208,7 +1224,22 @@ function mycreatedresume() {
                       <div style={{  }} className={Styles.dropdownwrapperHome} ref={menuRef} >
                         <p onClick={() => { handleEmpOpen(); handleStuClose();setisEmpregCheck(false) }}>Employer Login</p>
                         <p onClick={() => { handleStuOpen(); handleClose();setisregCheck(false) }}>Job Seeker Login</p>
-                        <p onClick={() => { handleStuOpen(); handleClose();setcslogin(true); setcsreg(false) }}>CSC Login</p>
+                        <p
+  onClick={() => {
+    handleStuOpen();
+    handleClose();
+    setcslogin(true);
+    setcsreg(false);
+  }}
+  style={{
+    cursor: "pointer",
+  }}
+>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Login
+</p>
                       </div>
                     </div>
 
@@ -1730,7 +1761,20 @@ onClick={() => {
                            <div className={Styles.MobHomeDropdownwrapper} ref={menuRef} >
                              <p onClick={() => { navigate("/EmployeeLogin") }}>Employer Login </p>
                              <p onClick={() => { navigate("/JobSeekerLogin") }}>Job Seeker Login</p>
-                             <p onClick={()=>{navigate("/JobSeekerLogin", {state: { loginpage: "cs" }})}} >CSC Login</p>
+                            <p
+  onClick={() => {
+    navigate("/JobSeekerLogin", { state: { loginpage: "cs" } });
+  }}
+  style={{
+    
+    cursor: "pointer",
+  }}
+>
+  <span style={{ color: "blue",fontWeight: "bold"  }}>C</span>
+  <span style={{ color: "grey" ,fontWeight: "bold"}}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Login
+</p>
                            </div>
                            : ""}
                        </div>           

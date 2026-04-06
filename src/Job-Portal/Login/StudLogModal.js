@@ -414,10 +414,23 @@ const Modal = ({ isregCheck,isStuOpen, onClose,cslogin, csreg, children, msalIns
 						{isregCheck === true ? (
   <p className={styles.Loginpage}>New Job Seeker Registration</p>
 ) : cslogin === true ? (
-  <p className={styles.Loginpage} style={{marginLeft:"30%"}}>CSC Login</p>
+ <p className={styles.Loginpage} style={{ marginLeft: "30%"}}>
+  <span style={{ color: "blue",fontWeight:"bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight:"bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight:"bold" }}>C</span>{" "}
+  Login
+</p>
 ) 
 : csreg === true ? (
-  <p className={styles.Loginpage} style={{marginLeft:"20%"}}>CSC Registration</p>
+  <p
+  className={styles.Loginpage}
+  style={{ marginLeft: "20%"}}
+>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>
+  <span style={{ color: "grey",fontWeight: "bold" }}>S</span>
+  <span style={{ color: "blue",fontWeight: "bold" }}>C</span>{" "}
+  Registration
+</p>
 ): (
   <p className={styles.Loginpage}>Job Seeker Login</p>
 )}
