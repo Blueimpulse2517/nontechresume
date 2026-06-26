@@ -96,7 +96,7 @@ import MyCreatedResume from "./Job-Portal/Resumes/MyCreatedResume";
 
 
 // import PostFraud from "./Job-Portal/Jobs/PostFraud";
-axios.defaults.baseURL = " https://itwalkin-backend-testrelease-2-0-1-0824-ns0g.onrender.com" // Render Test
+axios.defaults.baseURL = " https://nontech-backend.onrender.com" // Render Test
 
 function App() {
 
